@@ -1314,6 +1314,7 @@
 
         // ── お知らせ(News)をスプレッドシートから動的取得 ──
         // 同じスプレッドシートの「NEWS」シートをCSVで取得
+        // 列の順番: A=掲載開始, B=掲載終了, C=掲載文, D=画像1, E=画像2, F=リンク
         const NEWS_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1MsiVmU1WiKVBrJKMEp17UbfjL2RD6iFvMGBgffXLB_4/gviz/tq?tqx=out:csv&sheet=NEWS';
 
         // CSV全体を2次元配列に変換（複数行にまたがる引用フィールドにも対応）
@@ -1365,11 +1366,13 @@
         }
 
         function renderNewsCard(row) {
-            const img1 = driveImageUrl((row[2] || '').trim());
-            const img2 = driveImageUrl((row[3] || '').trim());
-            const text = (row[4] || '').trim();
+            const text = (row[2] || '').trim();
+            const img1 = driveImageUrl((row[3] || '').trim());
+            const img2 = driveImageUrl((row[4] || '').trim());
+            const link = (row[5] || '').trim();
             const images = [img1, img2].filter(Boolean);
 
+            // (b) 画像
             let imagesHtml = '';
             if (images.length === 1) {
                 imagesHtml = `<div class="rounded-2xl overflow-hidden mb-4 bg-gray-100">
@@ -1386,11 +1389,21 @@
                 </div>`;
             }
 
+            // (c) 文章
             const textHtml = text
                 ? `<p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHtml(text).replace(/\n/g, '<br>')}</p>`
                 : '';
 
-            return `<div class="bg-white rounded-[2rem] p-6 md:p-8 soft-shadow reveal">${imagesHtml}${textHtml}</div>`;
+            // (d) リンク
+            const linkHtml = link
+                ? `<div class="mt-4">
+                    <a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-5 py-2.5 rounded-full font-bold text-sm transition">
+                        詳しくはこちら <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>`
+                : '';
+
+            return `<div class="bg-white rounded-[2rem] p-6 md:p-8 soft-shadow reveal">${imagesHtml}${textHtml}${linkHtml}</div>`;
         }
 
         async function loadNews() {
@@ -1411,9 +1424,9 @@
                 const activeNews = rows.slice(1).filter(r => {
                     const start = parseSheetDate(r[0]);
                     const end = parseSheetDate(r[1]);
-                    const text = (r[4] || '').trim();
-                    const img1 = (r[2] || '').trim();
-                    const img2 = (r[3] || '').trim();
+                    const text = (r[2] || '').trim();
+                    const img1 = (r[3] || '').trim();
+                    const img2 = (r[4] || '').trim();
                     if (!start || !end) return false;
                     if (!text && !img1 && !img2) return false;
                     return today >= start && today <= end;
