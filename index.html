@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxuz(ラクサス) | 大阪のエアコン・レンジフード・洗濯機クリーニング</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="大阪市東淀川区拠点のハウスクリーニング専門店Laxuz。エアコン・レンジフード・洗濯機の分解洗浄をプロが丁寧に対応。小さなお子様・ペットにも安心な洗剤使用。損害保険加入。LINEで簡単予約・無料相談受付中。">
+    <meta name="keywords" content="エアコンクリーニング,大阪,レンジフード,洗濯機,ハウスクリーニング,東淀川区,分解洗浄,エアコン掃除">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Laxuz">
+
+    <!-- OGP Tags -->
+    <meta property="og:title" content="Laxuz | 大阪のエアコン・レンジフード・洗濯機クリーニング">
+    <meta property="og:description" content="大阪市東淀川区拠点のハウスクリーニング専門店。プロの技術で丁寧に洗い上げます。LINEで簡単予約・無料相談受付中。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://laxuz.jp/">
+    <meta property="og:image" content="https://laxuz.jp/img/hero.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Laxuz">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Laxuz | 大阪のエアコン・レンジフード・洗濯機クリーニング">
+    <meta name="twitter:description" content="大阪市東淀川区拠点のハウスクリーニング専門店。プロの技術で丁寧に洗い上げます。">
+    <meta name="twitter:image" content="https://laxuz.jp/img/hero.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://laxuz.jp/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#0F766E',
+                            light: '#CCFBF1',
+                            accent: '#F59E0B',
+                            accentHover: '#D97706',
+                            text: '#475569',
+                            bg: '#FFFAED',
+                            line: '#06C755',
+                            lineHover: '#05B34C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
+                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
+                        kiwi: ['"Kiwi Maru"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 100px; }
+        .soft-shadow { box-shadow: 0 10px 40px -10px rgba(15, 118, 110, 0.08); }
+        .marker-line {
+            background: linear-gradient(transparent 60%, #CCFBF1 60%);
+            display: inline;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* iOSでアニメーション無効設定の場合は即表示 */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* Star rating */
+        .stars { color: #F59E0B; letter-spacing: 2px; }
+
+        /* Review card hover */
+        .review-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .review-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px -10px rgba(15, 118, 110, 0.15); }
+
+        /* Trust badge pulse */
+        @keyframes badge-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(6, 199, 85, 0); }
+        }
+        .badge-pulse { animation: badge-pulse 2.5s ease-in-out infinite; }
+
+        /* FAQ smooth open */
+        details > div { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Floating LINE button - smaller on mobile */
+        .float-line-btn { bottom: 1.25rem; right: 1.25rem; }
+        @media (min-width: 768px) { .float-line-btn { bottom: 2.5rem; right: 2.5rem; } }
+    </style>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Laxuz",
+      "description": "大阪市東淀川区拠点のハウスクリーニング専門店。エアコン・レンジフード・洗濯機の分解洗浄。",
+      "url": "https://laxuz.jp",
+      "image": "https://laxuz.jp/img/hero.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "大阪府",
+        "addressLocality": "大阪市東淀川区",
+        "addressCountry": "JP"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1000"
+      }
+    }
+    </script>
+</head>
+<body class="font-sans text-brand-text antialiased bg-brand-bg flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-brand-light" style="top:0; left:0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-between items-center">
+            <a href="index.html" class="flex-shrink-0 flex items-center z-[9999] block group">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="leaf" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-maru font-bold text-xl text-gray-800 tracking-wider">Laxuz</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center z-20 text-sm lg:text-base">
+                <button onclick="window.scrollToSection('features')" class="text-gray-600 hover:text-brand-primary font-medium transition">選ばれる理由</button>
+                <button onclick="window.scrollToSection('reviews')" class="text-gray-600 hover:text-brand-primary font-medium transition">実績・口コミ</button>
+                <button onclick="window.scrollToSection('flow')" class="text-gray-600 hover:text-brand-primary font-medium transition">流れ</button>
+                <button onclick="window.scrollToSection('area')" class="text-gray-600 hover:text-brand-primary font-medium transition">エリア</button>
+                <button onclick="window.scrollToSection('faq')" class="text-gray-600 hover:text-brand-primary font-medium transition">FAQ</button>
+                <button onclick="window.scrollToSection('menu')" class="text-gray-600 hover:text-brand-primary font-medium transition">料金・メニュー</button>
+                <a href="column.html" class="text-gray-600 hover:text-brand-primary font-medium transition flex items-center gap-1.5">
+                    <i data-lucide="book-open" class="w-4 h-4"></i> コラム
+                </a>
+                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 lg:px-6 py-2.5 rounded-full font-bold shadow-md transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> LINE予約
+                </a>
+            </nav>
+            <div class="md:hidden flex items-center z-20">
+                <button onclick="window.toggleMenu()" class="text-gray-600 hover:text-brand-primary focus:outline-none p-2 bg-brand-light rounded-full">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-bg z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6 space-y-4" style="height: 100vh;">
+            <button onclick="window.toggleMenu()" class="absolute top-6 right-6 text-gray-500 bg-white rounded-full p-2 shadow-sm"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <button onclick="window.scrollToSection('features')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-brand-primary"></i>選ばれる理由</button>
+            <button onclick="window.scrollToSection('reviews')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="camera" class="w-5 h-5 text-brand-primary"></i>実績・口コミ</button>
+            <button onclick="window.scrollToSection('flow')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="truck" class="w-5 h-5 text-brand-primary"></i>ご利用の流れ</button>
+            <button onclick="window.scrollToSection('area')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>訪問エリア</button>
+            <button onclick="window.scrollToSection('faq')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="help-circle" class="w-5 h-5 text-brand-primary"></i>よくある質問</button>
+            <button onclick="window.scrollToSection('menu')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</button>
+            <a href="column.html" onclick="window.toggleMenu()" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-brand-primary"></i>お掃除コラム</a>
+            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4">
+                <i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約
+            </a>
+        </div>
+    </header>
+
+    <div class="flex-grow pt-20">
+
+        <!-- ★ 追加: 実績バー (Social Proof Banner) -->
+        <div class="bg-brand-primary text-white py-2.5 text-center text-sm font-bold tracking-wide">
+            <span class="inline-flex items-center gap-4 flex-wrap justify-center">
+                <span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-brand-accent fill-current"></i> Google評価 4.9</span>
+                <span class="opacity-40">|</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4"></i> 累計 1,000件以上の施工実績</span>
+                <span class="opacity-40">|</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4"></i> 損害保険加入済み</span>
+            </span>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="relative bg-[#FFFAED] pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-light opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-50 opacity-80 blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/2 text-center lg:text-left reveal">
+                        <span class="inline-flex items-center bg-white text-brand-primary px-5 py-2 rounded-full text-sm font-bold soft-shadow mb-6 border border-brand-light">
+                            <i data-lucide="home" class="w-4 h-4 mr-2"></i>大阪全域・出張費無料エリア多数
+                        </span>
+
+                        <h1 class="text-4xl lg:text-5xl/tight font-maru font-bold text-gray-800 mb-6 reveal delay-100">
+                            ご家族に、<br>
+                            <span class="marker-line text-brand-primary">気持ちいい暮らし</span>を。<br>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-10 leading-relaxed font-sans reveal delay-200">
+                            エアコンのニオイ、レンジフードの油汚れ、洗濯機の黒カビ。<br>
+                            Laxuzは、おうちの「気になる」をプロの技術でスッキリ解決します。<br>
+                            小さなお子様やペットのためにも、きれいな状態にしましょう。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal delay-300">
+                            <button onclick="window.scrollToSection('menu')" class="bg-brand-primary hover:bg-teal-800 text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                                <i data-lucide="clipboard-list" class="w-5 h-5"></i> 料金・メニューを見る
+                            </button>
+                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white soft-shadow px-8 py-4 rounded-full font-bold transition text-center flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 relative w-full max-w-lg mx-auto reveal delay-200">
+                        <div class="relative rounded-[2.5rem] overflow-hidden soft-shadow border-8 border-white transform lg:rotate-2 hover:rotate-0 transition duration-700 bg-gray-100">
+                            <img src="/img/hero.jpg" alt="清潔なおうちの風景" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/800x600/e2e8f0/94a3b8?text=hero.jpg';">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl soft-shadow border border-brand-light flex items-center gap-3 transform -rotate-3">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 badge-pulse">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-bold">安心の</p>
+                                <p class="text-sm font-bold text-gray-800">損害保険加入店</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news-section" class="py-16 md:py-20 bg-[#FFFAED] relative" style="display:none;">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-10 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="megaphone" class="w-4 h-4"></i> News
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">お知らせ</h2>
+                </div>
+
+                <div id="news-list" class="space-y-6">
+                    <!-- JSでスプレッドシートから自動生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-20 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="heart" class="w-4 h-4"></i> Our Promises
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">Laxuzが大切にしている<br class="md:hidden"><span class="text-brand-primary">3つのお約束</span></h2>
+                    <p class="mt-4 text-gray-500">確かな技術と誠実な対応で、お客様の「安心」をお約束します。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-brand-bg rounded-[2.5rem] p-8 text-center soft-shadow transform transition duration-500 hover:-translate-y-2 reveal relative pt-12">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-light text-brand-primary font-bold tracking-wider px-6 py-2 rounded-full border-4 border-white shadow-sm text-sm">Promise 01</div>
+                        <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-brand-primary mb-6 shadow-sm">
+                            <i data-lucide="calculator" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-maru font-bold text-gray-800 mb-4">分かりやすく<br>安心の明朗会計</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">「汚れがひどいから追加料金」といったことは一切ありません。作業前にしっかりとお見積りを提示し、ご納得いただいてからクリーニングを開始します。</p>
+                    </div>
+                    <div class="bg-brand-bg rounded-[2.5rem] p-8 text-center soft-shadow transform transition duration-500 hover:-translate-y-2 reveal delay-100 relative pt-12">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-light text-brand-primary font-bold tracking-wider px-6 py-2 rounded-full border-4 border-white shadow-sm text-sm">Promise 02</div>
+                        <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-brand-primary mb-6 shadow-sm">
+                            <i data-lucide="wrench" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-maru font-bold text-gray-800 mb-4">丁寧に部品を外し<br>内部までしっかり洗浄</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">エアコン、洗濯機、レンジフード、それぞれの構造に合わせて必要な部品を丁寧に外し、専用の高圧洗浄機や洗剤を用いて、奥に潜むカビや汚れをすっきり洗い流します。</p>
+                    </div>
+                    <div class="bg-brand-bg rounded-[2.5rem] p-8 text-center soft-shadow transform transition duration-500 hover:-translate-y-2 reveal delay-200 relative pt-12">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-light text-brand-primary font-bold tracking-wider px-6 py-2 rounded-full border-4 border-white shadow-sm text-sm">Promise 03</div>
+                        <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-brand-primary mb-6 shadow-sm">
+                            <i data-lucide="camera" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-maru font-bold text-gray-800 mb-4">写真で確認！<br>安心のビフォーアフター</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">見えない場所の汚れを扱うからこそ、作業前後の様子を写真でしっかりとお見せします。自分の目で綺麗になったことを確認いただけるので、安心感が違います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Column Promo Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="book-open" class="w-4 h-4"></i> Column
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">お掃除の<span class="text-brand-primary">役立ちコラム</span></h2>
+                    <p class="mt-4 text-gray-500">プロが教える正しい頻度とカビ・油汚れ対策。知って得する知識をまとめました。</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- エアコン -->
+                    <a href="column.html#aircon" class="group bg-brand-bg border border-brand-light rounded-[1.5rem] p-6 soft-shadow hover:-translate-y-2 transition-transform duration-300 reveal flex flex-col">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary mb-4 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="wind" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-2">CHAPTER 01</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-base mb-2 leading-snug">エアコンの掃除頻度と「そろそろ限界」のサイン</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed flex-1">カビ臭や電気代増加…見逃しがちなSOSサインを解説。</p>
+                        <span class="mt-4 text-brand-primary text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            詳しく読む <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+
+                    <!-- 洗濯機 -->
+                    <a href="column.html#washing" class="group bg-brand-bg border border-brand-light rounded-[1.5rem] p-6 soft-shadow hover:-translate-y-2 transition-transform duration-300 reveal delay-100 flex flex-col">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary mb-4 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="loader" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-2">CHAPTER 02</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-base mb-2 leading-snug">洗濯機のカビ対策と正しいお掃除頻度</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed flex-1">衣類につく黒いカスの正体と、市販クリーナーの限界とは。</p>
+                        <span class="mt-4 text-brand-primary text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            詳しく読む <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+
+                    <!-- レンジフード -->
+                    <a href="column.html#rangehood" class="group bg-brand-bg border border-brand-light rounded-[1.5rem] p-6 soft-shadow hover:-translate-y-2 transition-transform duration-300 reveal delay-200 flex flex-col">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary mb-4 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="utensils" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-2">CHAPTER 03</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-base mb-2 leading-snug">レンジフードの油汚れが換気効率を下げる理由</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed flex-1">放置で換気効率が最大80%低下。火災リスクにも関係します。</p>
+                        <span class="mt-4 text-brand-primary text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            詳しく読む <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+
+                    <!-- プロvs市販 -->
+                    <a href="column.html#pro-vs-diy" class="group bg-brand-bg border border-brand-light rounded-[1.5rem] p-6 soft-shadow hover:-translate-y-2 transition-transform duration-300 reveal delay-300 flex flex-col">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary mb-4 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="flask-conical" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-2">CHAPTER 04</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-base mb-2 leading-snug">プロの洗剤と市販洗剤、何がどう違うのか？</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed flex-1">洗浄力・安全性・機材の違いを7項目で徹底比較。</p>
+                        <span class="mt-4 text-brand-primary text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            詳しく読む <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="mt-8 text-center reveal">
+                    <a href="column.html" class="inline-flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-7 py-3 rounded-full font-bold transition duration-300">
+                        <i data-lucide="book-open" class="w-4 h-4"></i> コラムをすべて読む
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews & Works Section -->
+        <section id="reviews" class="py-24 bg-[#FFFAED] relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full opacity-40 blur-3xl -mt-20"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i> Voice & Works
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">実績と<span class="text-brand-primary">喜びの声</span></h2>
+                    <p class="mt-4 text-gray-600">エアコンだけでなく、水まわりのクリーニングでも高評価をいただいています。</p>
+                </div>
+
+                <!-- Before/After Photos -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+                    <!-- エアコン: aircon_before.jpg / aircon_after.jpg -->
+                    <div class="bg-white p-6 rounded-[2rem] soft-shadow reveal">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="wind" class="text-brand-primary"></i>
+                            <span class="font-bold text-gray-800">エアコン実績</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="bg-gray-100 rounded-lg aspect-square overflow-hidden relative">
+                                <img src="/img/aircon_before.jpg" alt="エアコン クリーニング前" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gray-100 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-gray-300 mb-1"></i>
+                                    <p class="text-[10px] text-gray-400 font-bold">aircon_before.jpg</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-gray-800/80 text-[10px] text-white px-2 py-0.5 rounded-full">Before</span>
+                            </div>
+                            <div class="bg-teal-50 rounded-lg aspect-square overflow-hidden relative border border-brand-light">
+                                <img src="/img/aircon_after.jpg" alt="エアコン クリーニング後" class="w-full h-full object-cover" style="transform:rotate(180deg);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-teal-50 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-teal-200 mb-1"></i>
+                                    <p class="text-[10px] text-brand-primary font-bold">aircon_after.jpg</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-brand-primary text-[10px] text-white px-2 py-0.5 rounded-full">After</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-relaxed italic">「カビのニオイが消えて、赤ちゃんも安心して寝かせられます！」</p>
+                    </div>
+
+                    <!-- レンジフード: rangehood_before.png / rangehood_after.png -->
+                    <div class="bg-white p-6 rounded-[2rem] soft-shadow reveal delay-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="utensils" class="text-brand-primary"></i>
+                            <span class="font-bold text-gray-800">レンジフード実績</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="bg-gray-100 rounded-lg aspect-square overflow-hidden relative">
+                                <img src="/img/rangehood_before.png" alt="レンジフード クリーニング前" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gray-100 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-gray-300 mb-1"></i>
+                                    <p class="text-[10px] text-gray-400 font-bold">rangehood_before.png</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-gray-800/80 text-[10px] text-white px-2 py-0.5 rounded-full">Before</span>
+                            </div>
+                            <div class="bg-teal-50 rounded-lg aspect-square overflow-hidden relative border border-brand-light">
+                                <img src="/img/rangehood_after.png" alt="レンジフード クリーニング後" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-teal-50 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-teal-200 mb-1"></i>
+                                    <p class="text-[10px] text-brand-primary font-bold">rangehood_after.png</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-brand-primary text-[10px] text-white px-2 py-0.5 rounded-full">After</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-relaxed italic">「ベタベタの油汚れがスッキリ！換気の音が静かになりました。」</p>
+                    </div>
+
+                    <!-- 洗濯機: washing_before.jpg / washing_after.jpg -->
+                    <div class="bg-white p-6 rounded-[2rem] soft-shadow reveal delay-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="loader" class="text-brand-primary"></i>
+                            <span class="font-bold text-gray-800">洗濯機実績</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="bg-gray-100 rounded-lg aspect-square overflow-hidden relative">
+                                <img src="/img/washing_before.jpg" alt="洗濯機 クリーニング前" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gray-100 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-gray-300 mb-1"></i>
+                                    <p class="text-[10px] text-gray-400 font-bold">washing_before.jpg</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-gray-800/80 text-[10px] text-white px-2 py-0.5 rounded-full">Before</span>
+                            </div>
+                            <div class="bg-teal-50 rounded-lg aspect-square overflow-hidden relative border border-brand-light">
+                                <img src="/img/washing_after.jpg" alt="洗濯機 クリーニング後" class="w-full h-full object-cover" style="transform:rotate(180deg);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-teal-50 flex-col items-center justify-center text-center p-2 hidden" style="display:none">
+                                    <i data-lucide="image" class="w-8 h-8 text-teal-200 mb-1"></i>
+                                    <p class="text-[10px] text-brand-primary font-bold">washing_after.jpg</p>
+                                </div>
+                                <span class="absolute top-1 left-1 bg-brand-primary text-[10px] text-white px-2 py-0.5 rounded-full">After</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-relaxed italic">「洗濯物に付く黒いカスが出なくなり、洗濯が楽しみになりました！」</p>
+                    </div>
+
+                </div>
+
+                <!-- ★ 追加: お客様の声カード -->
+                <div class="text-center mb-10 reveal">
+                    <h3 class="text-2xl font-maru font-bold text-gray-800">お客様の<span class="text-brand-primary">リアルな声</span></h3>
+                    <!-- 総合評価バー -->
+                    <div class="inline-flex items-center gap-3 mt-4 bg-white px-6 py-3 rounded-full soft-shadow border border-brand-light">
+                        <span class="stars text-xl">★★★★★</span>
+                        <span class="font-bold text-gray-800 text-xl">4.9</span>
+                        <span class="text-gray-500 text-sm">/ 5.0（口コミ多数）</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- レビュー0（新・一番目） -->
+                    <div class="bg-brand-bg rounded-[1.5rem] p-6 soft-shadow border-2 border-brand-light review-card reveal">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-brand-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">H</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">H.O さん（大阪市・50代男性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">エアコンクリーニング</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「今まで大手メーカーのクリーニングやおそ○じ本舗でクリーニングしてきましたが、それよりもはるかに安い値段で、はるかに綺麗にしていただきました。こんなにコスパの良いお店があったとは。もっと早く知りたかったです！」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 大手比較で品質・価格ともに大満足
+                        </div>
+                    </div>
+
+                    <!-- レビュー1 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal delay-100">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-teal-100 flex items-center justify-center text-brand-primary font-bold text-lg flex-shrink-0">M</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">M.K さん（東淀川区・30代女性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">エアコン1台クリーニング</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「子育て中でエアコンのカビ臭が気になっていました。作業前後の写真を見せてもらい、こんなに汚れていたのかとびっくり！赤ちゃんにも安心な洗剤を使ってくれているとのことで、依頼して本当に良かったです。」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ビフォーアフター写真で確認済み
+                        </div>
+                    </div>
+
+                    <!-- レビュー2 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal delay-100">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-lg flex-shrink-0">T</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">T.Y さん（吹田市・40代男性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">洗濯機（縦型）分解洗浄</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「洗濯後の衣類に黒いカスが付いて困っていました。分解して見せてもらったら、槽の裏に大量のカビ。洗浄後は一切出なくなりました。作業も丁寧で、部屋を汚さないよう養生もきちんとしてくれました。」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 完全分解洗浄で根こそぎ除去
+                        </div>
+                    </div>
+
+                    <!-- レビュー3 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal delay-200">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg flex-shrink-0">S</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">S.N さん（豊中市・50代女性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">レンジフードクリーニング</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「何年も放置してしまったレンジフードをお願いしました。あんなにベタベタだったのがピカピカに！価格も事前にしっかり説明してもらえて、追加料金もなく安心でした。また次回も絶対お願いします。」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 事前見積もりで安心・明朗会計
+                        </div>
+                    </div>
+
+                    <!-- レビュー4 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">A</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">A.T さん（大阪市・20代女性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">エアコン＋洗濯機セット</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「引越し前にまとめてお願いしました！LINEでのやり取りがとてもスムーズで、日程調整も素早く対応していただけました。セット割でお得になり、仕上がりも大満足です。新居でも絶対リピートします！」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> まとめ割で2台セットがお得
+                        </div>
+                    </div>
+
+                    <!-- レビュー5 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal delay-100">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">K</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">K.M さん（摂津市・60代男性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">エアコン2台クリーニング</p>
+                                <div class="stars text-sm mt-1">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「知人の紹介で依頼しました。作業は非常に丁寧で、終わった後の部屋も綺麗にしてくれました。エアコンの風量が明らかに改善され、電気代も少し下がったような気がしています。信頼できるお店です。」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 作業後の片付けまで丁寧に対応
+                        </div>
+                    </div>
+
+                    <!-- レビュー6 -->
+                    <div class="bg-white rounded-[1.5rem] p-6 soft-shadow border border-gray-50 review-card reveal delay-200">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-11 h-11 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg flex-shrink-0">Y</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">Y.H さん（守口市・30代女性）</p>
+                                <p class="text-xs text-gray-400 mt-0.5">洗濯機（縦型）分解洗浄</p>
+                                <div class="stars text-sm mt-1">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">「初めてのハウスクリーニングで不安でしたが、LINEで気軽に相談できて安心しました。洗濯槽の汚れを実際に見せてもらい、定期的なメンテナンスの大切さを実感。次回はエアコンもお願いしようと思っています！」</p>
+                        <div class="mt-3 flex items-center gap-1.5 text-xs text-brand-primary font-bold">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> LINEで気軽に相談から始められた
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google レビュー誘導 -->
+                <div class="mt-10 text-center reveal">
+                    <a href="https://g.page/r/CQdDfVDqeQ9KEBE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white border-2 border-brand-light hover:border-brand-primary text-brand-primary px-6 py-3 rounded-full font-bold transition soft-shadow hover:-translate-y-0.5 transform">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Googleで全ての口コミを見る
+                    </a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Flow Section -->
+        <section id="flow" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-20 reveal">
+                    <p class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Flow
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">ご予約から<br class="md:hidden"><span class="text-brand-primary">作業完了までの流れ</span></h2>
+                    <p class="mt-4 text-gray-500">ご予約後は、当日お待ちいただくだけ。どのメニューでもスムーズに対応します。</p>
+                </div>
+
+                <div class="relative">
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-brand-light/50 rounded-full z-0 transform -translate-y-1/2"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 relative z-10">
+                        <div class="relative text-center reveal">
+                            <div class="w-20 h-20 md:w-24 md:h-24 mx-auto bg-brand-primary text-white rounded-full flex flex-col items-center justify-center font-bold mb-6 shadow-lg border-4 border-white">
+                                <span class="text-sm font-normal opacity-80 mb-0.5">STEP</span><span class="text-3xl font-maru">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">ご予約完了</h3>
+                            <p class="text-gray-600 text-sm">LINEで日程調整。日時が確定したら完了です。</p>
+                            <div class="md:hidden w-1 h-12 bg-brand-light/50 mx-auto my-4 rounded-full"></div>
+                        </div>
+                        <div class="relative text-center reveal delay-100">
+                            <div class="w-20 h-20 md:w-24 md:h-24 mx-auto bg-brand-light text-brand-primary rounded-full flex flex-col items-center justify-center font-bold mb-6 shadow-sm border-4 border-white">
+                                <span class="text-sm font-normal opacity-80 mb-0.5">STEP</span><span class="text-3xl font-maru">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">ご訪問・事前確認</h3>
+                            <p class="text-gray-600 text-sm">当日、状態確認と丁寧な養生（保護）を行います。</p>
+                            <div class="md:hidden w-1 h-12 bg-brand-light/50 mx-auto my-4 rounded-full"></div>
+                        </div>
+                        <div class="relative text-center reveal delay-200">
+                            <div class="w-20 h-20 md:w-24 md:h-24 mx-auto bg-brand-light text-brand-primary rounded-full flex flex-col items-center justify-center font-bold mb-6 shadow-sm border-4 border-white">
+                                <span class="text-sm font-normal opacity-80 mb-0.5">STEP</span><span class="text-3xl font-maru">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">プロの徹底洗浄</h3>
+                            <p class="text-gray-600 text-sm">専用機材で、汚れを根こそぎ落とします。</p>
+                            <div class="md:hidden w-1 h-12 bg-brand-light/50 mx-auto my-4 rounded-full"></div>
+                        </div>
+                        <div class="relative text-center reveal delay-300">
+                            <div class="w-20 h-20 md:w-24 md:h-24 mx-auto bg-brand-accent text-white rounded-full flex flex-col items-center justify-center font-bold mb-6 shadow-lg border-4 border-white">
+                                <span class="text-sm font-normal opacity-80 mb-0.5">STEP</span><span class="text-3xl font-maru">4</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">ご確認・お支払い</h3>
+                            <p class="text-gray-600 text-sm">写真を確認し、お支払い。作業完了です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Area Map Section -->
+        <section id="area" class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-72 h-72 rounded-full bg-brand-light opacity-30 blur-3xl -ml-24 -mt-24"></div>
+            <div class="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-orange-50 opacity-60 blur-3xl -mr-24 -mb-24"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-14 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Service Area
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-gray-800">訪問<span class="text-brand-primary">エリア</span></h2>
+                    <p class="mt-4 text-gray-500">大阪市東淀川区を拠点に、大阪府内を広くカバーしています。</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
+
+                    <!-- Map image -->
+                    <div class="w-full lg:w-1/2 reveal">
+                        <div class="relative rounded-[2rem] overflow-hidden soft-shadow border-4 border-white">
+                            <img src="/img/エリア.png" alt="Laxuz 訪問エリアマップ" class="w-full h-auto object-cover">
+                            <!-- 凡例オーバーレイ -->
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-md flex flex-col gap-2 text-xs font-bold">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-4 h-4 rounded-sm bg-yellow-300 border border-yellow-400 flex-shrink-0"></span>
+                                    <span class="text-gray-700">出張費無料エリア</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-4 h-4 rounded-sm bg-sky-300 border border-sky-400 flex-shrink-0"></span>
+                                    <span class="text-gray-700">出張費有料エリア</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Area details -->
+                    <div class="w-full lg:w-1/2 reveal delay-100 space-y-5">
+
+                        <!-- 無料エリア -->
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-yellow-800"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-yellow-700 tracking-widest">出張費 無料</p>
+                                    <h3 class="font-maru font-bold text-gray-800 text-lg">無料エリア（黄色）</h3>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">東淀川区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">淀川区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">西淀川区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">北区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">都島区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">旭区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">鶴見区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">福島区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">此花区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">中央区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">西区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">東成区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">城東区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">生野区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">東住吉区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">平野区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">住吉区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">住之江区</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">守口市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">門真市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">寝屋川市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">枚方市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">交野市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">四條畷市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">大東市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">東大阪市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">八尾市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">柏原市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">摂津市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">吹田市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">豊中市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">池田市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">箕面市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">茨木市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">高槻市</span>
+                                <span class="bg-white border border-yellow-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">島本町</span>
+                            </div>
+                        </div>
+
+                        <!-- 有料エリア -->
+                        <div class="bg-sky-50 border border-sky-200 rounded-2xl p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-sky-300 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-sky-800"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-sky-700 tracking-widest">別途 出張費あり</p>
+                                    <h3 class="font-maru font-bold text-gray-800 text-lg">有料エリア（水色）</h3>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">能勢町</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">豊能町</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">川西市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">宝塚市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">伊丹市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">尼崎市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">生駒市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">平群町</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">堺市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">羽曳野市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">富田林市</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">太子町</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">河南町</span>
+                                <span class="bg-white border border-sky-200 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full">明石市 など</span>
+                            </div>
+                        </div>
+
+                        <!-- エリア外相談 -->
+                        <div class="bg-brand-bg border border-brand-light rounded-2xl p-5 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-primary flex-shrink-0">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-bold text-gray-800 text-sm">エリア外のお客様もご相談ください</p>
+                                <p class="text-xs text-gray-500 mt-0.5">記載エリア外でもお伺いできる場合があります。まずはLINEでお気軽にご相談ください。</p>
+                            </div>
+                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full flex-shrink-0 transition">
+                                LINEで相談
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ★ 改善: FAQ Section (項目を7つに増強) -->
+        <section id="faq" class="py-24 bg-brand-bg relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-2">FAQ</p>
+                    <h2 class="text-3xl font-maru font-bold text-gray-800">よくあるご質問</h2>
+                    <p class="mt-4 text-gray-600">エアコン、レンジフード、洗濯機。それぞれの疑問にお答えします。</p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal delay-200">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 当日の支払い方法を教えてください。</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p>現金、PayPay、クレジットカード（+4%）に対応しております。作業完了後にご確認いただいてからのお支払いとなります。</p>
+                        </div>
+                    </details>
+
+                    <!-- ★ 新規FAQ -->
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 作業時間はどのくらいかかりますか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p>目安は以下の通りです。</p>
+                            <ul class="mt-2 space-y-1 text-sm">
+                                <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-primary flex-shrink-0"></i> エアコン：約1〜2時間</li>
+                                <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-primary flex-shrink-0"></i> レンジフード：約1.5〜2時間</li>
+                                <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-primary flex-shrink-0"></i> 洗濯機（縦型分解）：約2〜3時間</li>
+                            </ul>
+                            <p class="mt-2 text-sm">汚れの状態によって前後する場合があります。</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal delay-100">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 小さい子供やペットがいても大丈夫ですか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p>はい、対応しています。Laxuzでは小さなお子様やペットのいるご家庭向けに、<strong class="text-brand-primary">低刺激・環境対応洗剤への変更オプション（有料）</strong>をご用意しています。ご希望の場合はご予約時にLINEでお知らせください。ただし、作業中は換気をお願いする場合がございます。</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal delay-200">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 追加料金が発生することはありますか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p>作業前に現状を確認し、お見積りを提示してからクリーニングを開始するため、<strong class="text-brand-primary">原則として追加料金は発生しません。</strong>「汚れがひどいから追加」といったことは一切ございません。万が一、作業開始後に想定外の状況が発生した場合は、その場でご説明してからご相談いたします。</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 複数箇所まとめて依頼するとお得になりますか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p>はい！エアコン・レンジフード・洗濯機など<strong class="text-brand-primary">複数箇所まとめてのご依頼は割引対応</strong>しております。1日でまとめて行うことで出張費も節約でき、よりお得です。詳しくは料金・メニューページまたはLINEにてご相談ください。</p>
+                        </div>
+                    </details>
+
+                    </details>
+
+                    <!-- 古いエアコンについて -->
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 古いエアコンでも作業できますか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4 space-y-3">
+                            <p>はい、基本的には古いエアコンでも作業可能です。ただし、<strong class="text-gray-800">製造から9年以上経過した機種</strong>については、いくつかご注意いただきたい点があります。</p>
+                            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-2">
+                                <p class="text-sm font-bold text-amber-700 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> ご確認ください</p>
+                                <p class="text-sm text-amber-800 leading-relaxed">メーカーの部品保有期間は一般的に製造終了から<strong>9〜10年</strong>とされており、それ以降は部品の供給が終了しています。そのため、クリーニング中に部品が破損・劣化していた場合でも、交換部品が入手できないことがあります。</p>
+                                <p class="text-sm text-amber-800 leading-relaxed">また、長年使用したエアコンは内部の部品が経年劣化していることが多く、クリーニングがきっかけで不具合が表面化する場合もございます。</p>
+                            </div>
+                            <p class="text-sm leading-relaxed">こうした背景から、<strong class="text-gray-800">9年以上経過した機種へのクリーニングは、お客様の自己責任</strong>という形でのご対応となります。作業前にご説明のうえ、ご了承いただいてから施工いたしますので、ご安心ください。</p>
+                            <p class="text-sm text-gray-500">ご不安な点がございましたら、まずはLINEでお気軽にご相談ください。機種や状況に応じてアドバイスいたします。</p>
+                        </div>
+                    </details>
+
+                    <!-- キャンセルについて -->
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> キャンセル・日程変更はできますか？</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4 space-y-3">
+                            <p>訪問日時確定後のキャンセルは、以下のキャンセル料が発生します。</p>
+                            <ul class="text-sm space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="text-brand-accent font-bold flex-shrink-0">・</span>サービス提供予定日の当日以降：<strong class="text-gray-800">料金の100%</strong></li>
+                                <li class="flex items-start gap-2"><span class="text-brand-accent font-bold flex-shrink-0">・</span>1日前のキャンセル：<strong class="text-gray-800">料金の50%</strong></li>
+                                <li class="flex items-start gap-2"><span class="text-brand-accent font-bold flex-shrink-0">・</span>2日前〜7日前のキャンセル：<strong class="text-gray-800">料金の25%</strong></li>
+                            </ul>
+                            <p class="text-sm bg-brand-bg rounded-xl p-3">訪問当日に現場確認の結果、双方の事情によらず作業実施が困難と判明した場合は<strong class="text-brand-primary">50%</strong>となります。</p>
+                            <p class="text-sm font-bold text-gray-800">キャンセルされる場合は、必ずキャンセルの意思をお伝えください。</p>
+                        </div>
+                    </details>
+
+                    <!-- スタッフについて -->
+                    <details class="group bg-white rounded-2xl overflow-hidden cursor-pointer soft-shadow border border-gray-100 reveal">
+                        <summary class="flex justify-between items-center p-6 font-bold text-gray-800 list-none">
+                            <span class="flex items-center gap-3"><span class="text-brand-accent text-xl">Q.</span> 作業スタッフについて教えてください。</span>
+                            <span class="transition-transform group-open:rotate-180 text-brand-primary flex-shrink-0"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 border-t border-gray-50 pt-4">
+                            <p class="mb-3">作業は自社スタッフが責任を持って対応いたします。スタッフのプロフィールは下記よりご確認いただけます。</p>
+                            <a href="https://furetomojapan.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-5 py-2.5 rounded-full font-bold text-sm transition">
+                                <i data-lucide="user" class="w-4 h-4"></i> スタッフ紹介を見る
+                            </a>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- LINE誘導 -->
+                <div class="mt-10 text-center reveal">
+                    <p class="text-gray-500 text-sm mb-4">他にご不明な点は、LINEでお気軽にご相談ください。</p>
+                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで質問する（無料）
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-24 bg-brand-primary relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="clipboard-list" class="w-4 h-4"></i> Price & Menu
+                    </p>
+                    <h2 class="text-3xl lg:text-4xl font-maru font-bold text-white mb-4">料金・<span class="text-brand-light">メニュー詳細</span></h2>
+                    <div class="inline-block bg-white/10 backdrop-blur-sm border border-brand-light/30 px-6 py-3 rounded-2xl mb-6">
+                        <p class="text-white font-bold flex items-center gap-2">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-brand-accent"></i>
+                            複数箇所のお掃除でさらにお得に！まとめ洗いがおすすめです。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 動的料金カード -->
+                <!-- エアコン3種 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 reveal">
+
+                    <!-- ノーマルエアコン -->
+                    <div class="bg-white rounded-[2rem] p-8 soft-shadow flex flex-col relative">
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-gray-100" style="height:176px;">
+                            <img src="/netimg/nomaru_eakon.png" alt="ノーマルエアコンクリーニング" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">AIRCON</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">ノーマルエアコン</h3>
+                        <p class="text-gray-500 text-xs mb-5">壁掛け・標準タイプ 1台あたり</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-5">
+                                <span class="text-gray-400 text-sm">1台</span>
+                                <span id="price-aircon-normal" class="text-3xl font-maru font-bold text-brand-primary ml-1">
+                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
+                                </span>
+                                <span class="text-gray-500 text-sm mb-1">円</span>
+                            </div>
+                            <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>フィルター・熱交換器・ドレンパン洗浄</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>ビフォーアフター写真撮影</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>子供・ペット対応洗剤使用可能（有料）</li>
+                            </ul>
+                            <a href="service-aircon.html" class="mt-2 block text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- お掃除機能エアコン -->
+                    <div class="bg-white rounded-[2rem] p-8 soft-shadow flex flex-col">
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-gray-100" style="height:176px;">
+                            <img src="/netimg/osouji_kino_eakon.png" alt="お掃除機能エアコンクリーニング" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">AIRCON</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">お掃除機能エアコン</h3>
+                        <p class="text-gray-500 text-xs mb-5">自動洗浄機能付き 1台あたり</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-5">
+                                <span class="text-gray-400 text-sm">1台</span>
+                                <span id="price-aircon-clean" class="text-3xl font-maru font-bold text-brand-primary ml-1">
+                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
+                                </span>
+                                <span class="text-gray-500 text-sm mb-1">円</span>
+                            </div>
+                            <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>自動洗浄ユニット含む分解洗浄</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>ビフォーアフター写真撮影</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>子供・ペット対応洗剤使用可能（有料）</li>
+                            </ul>
+                            <a href="service-aircon.html" class="mt-2 block text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Aセット（人気No.1バッジ） -->
+                    <div class="bg-amber-50 rounded-[2rem] p-8 soft-shadow flex flex-col relative ring-4 ring-brand-accent ring-offset-2 border border-amber-200">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap animate-bounce">
+                            ⭐ 人気No.1
+                        </div>
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-amber-100" style="height:176px;">
+                            <img src="/netimg/A_setto.png" alt="Aセット" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-amber-600 tracking-widest mb-1">AIRCON SET</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">Aセット</h3>
+                        <p class="text-gray-700 text-xs mb-5">エアコン料金に追加のオプションセット</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-2">
+                                <span class="text-gray-700 text-sm">＋</span>
+                                <span class="text-3xl font-maru font-bold text-gray-900 ml-1">8,000</span>
+                                <span class="text-gray-700 text-sm mb-1">円</span>
+                            </div>
+                            <p class="text-gray-600 text-xs mb-5">エアコンクリーニングへの追加料金</p>
+                            <ul class="text-xs text-gray-800 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 flex-shrink-0"></i>室外機クリーニング</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 flex-shrink-0"></i>防カビ加工</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 flex-shrink-0"></i>ドレンホース洗浄</li>
+                            </ul>
+                            <a href="service-aircon.html" class="block text-center bg-brand-accent hover:bg-amber-600 text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 洗濯機・レンジフード・浴室 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 reveal delay-100">
+
+                    <!-- 洗濯機カード -->
+                    <div class="bg-white rounded-[2rem] p-8 soft-shadow flex flex-col">
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-gray-100" style="height:176px;">
+                            <img src="/netimg/tategata_sentakuki.png" alt="縦型洗濯機クリーニング" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">WASHING MACHINE</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">縦型洗濯機</h3>
+                        <p class="text-gray-500 text-xs mb-5">完全分解洗浄 1台あたり</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-5">
+                                <span class="text-gray-400 text-sm">1台</span>
+                                <span id="price-washing" class="text-3xl font-maru font-bold text-brand-primary ml-1">
+                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
+                                </span>
+                                <span class="text-gray-500 text-sm mb-1">円</span>
+                            </div>
+                            <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>槽・パルセーター完全分解洗浄</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>黒カビを根こそぎ除去</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>ビフォーアフター写真撮影</li>
+                            </ul>
+                            <a href="service-washing.html" class="mt-2 block text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- レンジフードカード -->
+                    <div class="bg-white rounded-[2rem] p-8 soft-shadow flex flex-col">
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-gray-100" style="height:176px;">
+                            <img src="/netimg/rangehood.png" alt="レンジフードクリーニング" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">RANGE HOOD</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">レンジフード</h3>
+                        <p class="text-gray-500 text-xs mb-5">完全分解洗浄 1台あたり</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-5">
+                                <span class="text-gray-400 text-sm">1台</span>
+                                <span id="price-rangehood" class="text-3xl font-maru font-bold text-brand-primary ml-1">
+                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
+                                </span>
+                                <span class="text-gray-500 text-sm mb-1">円</span>
+                            </div>
+                            <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>シロッコファン・整流板分解洗浄</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>頑固な油汚れを徹底除去</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>ビフォーアフター写真撮影</li>
+                            </ul>
+                            <a href="service-rangehood.html" class="mt-2 block text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 浴室クリーニングカード -->
+                    <div class="bg-white rounded-[2rem] p-8 soft-shadow flex flex-col">
+                        <div class="w-full rounded-2xl overflow-hidden mb-5 bg-gray-100" style="height:176px;">
+                            <img src="/netimg/bathroom.png" alt="浴室クリーニング" style="width:100%;height:176px;object-fit:cover;display:block;">
+                        </div>
+                        <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">BATHROOM</p>
+                        <h3 class="font-maru font-bold text-gray-800 text-xl mb-1">浴室クリーニング</h3>
+                        <p class="text-gray-500 text-xs mb-5">エプロン・換気扇・暖房乾燥機</p>
+                        <div class="mt-auto">
+                            <div class="flex items-end gap-1 mb-5">
+                                <span class="text-gray-400 text-sm">エプロン</span>
+                                <span class="text-3xl font-maru font-bold text-brand-primary ml-1">6,000</span>
+                                <span class="text-gray-500 text-sm mb-1">円</span>
+                            </div>
+                            <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>浴槽エプロン内部の黒カビ除去</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>換気扇・暖房乾燥機の分解洗浄</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-primary flex-shrink-0"></i>ビフォーアフター写真撮影</li>
+                            </ul>
+                            <a href="service-bathroom.html" class="mt-2 block text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white py-2.5 rounded-full font-bold text-sm transition flex items-center justify-center gap-1.5">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i> 詳細はこちら
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ご予約タイトル -->
+                <div id="booking" class="text-center mb-10 reveal">
+                    <h2 class="text-4xl lg:text-5xl font-maru font-bold text-white">ご予約</h2>
+                </div>
+
+                <!-- iframeで全メニュー -->
+                <div class="reveal delay-100">
+                    <div class="bg-white rounded-[2rem] shadow-2xl border-4 border-brand-light/20 overflow-hidden relative">
+                        <div class="bg-gray-100 px-6 py-3 border-b border-gray-200 flex items-center justify-between text-xs font-bold text-gray-500">
+                            <div class="flex gap-2"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div></div>
+                            <span>Laxuz 全メニュー・料金表</span>
+                        </div>
+                        <div class="w-full h-[500px] lg:h-[600px] bg-white relative">
+                            <iframe src="https://x.gd/3yfCu" class="absolute inset-0 w-full h-full border-none z-10 bg-transparent" title="Laxuz 料金・メニュー詳細" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center reveal delay-200">
+                    <a href="https://x.gd/3yfCu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-brand-primary hover:bg-brand-light px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 w-full sm:w-auto">
+                        <i data-lucide="external-link" class="w-5 h-5"></i> 別ウィンドウで詳しく見る
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating LINE Button (スマホで小さめに) -->
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+        <i data-lucide="message-circle" class="w-7 h-7 md:w-10 md:h-10"></i>
+        <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            簡単予約・お見積り
+        </span>
+    </a>
+
+    <!-- ページトップに戻るボタン -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-24 right-5 md:bottom-28 md:right-12 z-[99] bg-white border-2 border-brand-light text-brand-primary w-11 h-11 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+    <footer class="bg-gray-800 text-gray-300 py-14 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- ブランド -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-gray-300"><i data-lucide="leaf" class="w-4 h-4"></i></div>
+                        <span class="font-maru font-bold text-lg tracking-wider text-white">Laxuz（ラクサス）</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">大阪市東淀川区を拠点に、エアコン・レンジフード・洗濯機のハウスクリーニングを行っています。お子様・ペットにも安心な環境で丁寧な作業をお約束します。</p>
+                </div>
+                <!-- 営業情報 -->
+                <div>
+                    <p class="text-sm font-bold text-white mb-4">営業情報</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-light flex-shrink-0"></i> 大阪市東淀川区（出張サービス）</li>
+                        <li class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-brand-light flex-shrink-0"></i> 営業時間：9:00〜18:00（年中無休）</li>
+                        <li class="flex items-center gap-2"><i data-lucide="credit-card" class="w-3.5 h-3.5 text-brand-light flex-shrink-0"></i> 現金・PayPay・クレジットカード対応</li>
+                        <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-light flex-shrink-0"></i> 損害保険加入済み</li>
+                    </ul>
+                </div>
+                <!-- リンク＋LINE -->
+                <div>
+                    <p class="text-sm font-bold text-white mb-4">メニュー</p>
+                    <ul class="text-xs text-gray-400 space-y-2 mb-6">
+                        <li><button onclick="window.scrollToSection('features')" class="hover:text-white transition">選ばれる理由</button></li>
+                        <li><button onclick="window.scrollToSection('reviews')" class="hover:text-white transition">実績・口コミ</button></li>
+                        <li><button onclick="window.scrollToSection('area')" class="hover:text-white transition">訪問エリア</button></li>
+                        <li><button onclick="window.scrollToSection('menu')" class="hover:text-white transition">料金・メニュー</button></li>
+                        <li><a href="column.html" class="hover:text-white transition">お掃除コラム</a></li>
+                    </ul>
+                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full transition">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> LINEで無料相談
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+                <p>&copy; 2025 Laxuz. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-white transition">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const el = document.getElementById(sectionId);
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+            const menu = document.getElementById('mobile-menu');
+            if(menu && !menu.classList.contains('translate-x-full')) toggleMenu();
+        }
+        window.scrollToSection = scrollToSection;
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('translate-x-full');
+        }
+        window.toggleMenu = toggleMenu;
+
+        // ── スプレッドシートから料金を動的取得 ──
+        // Googleスプレッドシート「ウェブに公開」のCSV形式URL
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZIUSA1wXtK30TkiLLcX_93kgbux6ikmXRNXqGrlRpbpDlp_GFK-96xvCQkeOeVBKY4Fv_aXo9YOYF/pub?output=csv';
+
+        function formatPrice(val) {
+            return Number(val).toLocaleString('ja-JP');
+        }
+
+        function setPrice(id, val) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = formatPrice(val);
+        }
+
+        function setError(ids) {
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = '<span class="text-sm text-gray-400">お問合せ</span>';
+            });
+        }
+
+        // CSVの1行をカラム配列に変換（引用符・カンマを正しく処理）
+        function parseCSVLine(line) {
+            const cols = [];
+            let cur = '';
+            let inQuote = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (ch === '"') {
+                    inQuote = !inQuote;
+                } else if (ch === ',' && !inQuote) {
+                    cols.push(cur.trim());
+                    cur = '';
+                } else {
+                    cur += ch;
+                }
+            }
+            cols.push(cur.trim());
+            return cols;
+        }
+
+        async function fetchPrices() {
+            const ids = ['price-aircon-normal','price-aircon-clean','price-washing','price-rangehood'];
+            try {
+                const res = await fetch(SHEET_URL);
+                if (!res.ok) throw new Error('fetch failed: ' + res.status);
+                const csv = await res.text();
+
+                // デバッグ用：最初の数行をコンソールに出力
+                const lines = csv.split('\n');
+                console.log('CSV取得成功。行数:', lines.length);
+                lines.slice(0, 5).forEach((l, i) => console.log(`行${i}:`, l));
+
+                const prices = {};
+                lines.forEach(line => {
+                    if (!line.trim()) return;
+                    const cols = parseCSVLine(line);
+                    // B列(index 1)=メニュー名, C列(index 2)=1台価格
+                    const name = (cols[1] || '').replace(/"/g, '').trim();
+                    const rawPrice = (cols[2] || '').replace(/"/g, '').replace(/,/g, '').trim();
+                    const price = parseFloat(rawPrice);
+                    if (name && !isNaN(price) && price > 0) {
+                        prices[name] = price;
+                    }
+                });
+
+                console.log('取得した価格データ:', prices);
+
+                if (prices['ノーマルエアコン'] != null)   setPrice('price-aircon-normal', prices['ノーマルエアコン']);
+                if (prices['お掃除機能エアコン'] != null) setPrice('price-aircon-clean',  prices['お掃除機能エアコン']);
+                if (prices['縦型洗濯機'] != null)         setPrice('price-washing',        prices['縦型洗濯機']);
+                if (prices['レンジフード'] != null)        setPrice('price-rangehood',      prices['レンジフード']);
+
+                if (Object.keys(prices).length === 0) throw new Error('データが空です');
+
+            } catch (e) {
+                setError(ids);
+                console.warn('料金の取得に失敗しました:', e);
+            }
+        }
+
+        fetchPrices();
+
+        // ── お知らせ(News)をスプレッドシートから動的取得 ──
+        // 同じスプレッドシートの「NEWS」シートをCSVで取得
+        const NEWS_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1MsiVmU1WiKVBrJKMEp17UbfjL2RD6iFvMGBgffXLB_4/gviz/tq?tqx=out:csv&sheet=NEWS';
+
+        // CSV全体を2次元配列に変換（複数行にまたがる引用フィールドにも対応）
+        function parseCSVFull(text) {
+            const rows = [];
+            let row = [];
+            let field = '';
+            let inQuotes = false;
+            for (let i = 0; i < text.length; i++) {
+                const ch = text[i];
+                const next = text[i + 1];
+                if (inQuotes) {
+                    if (ch === '"' && next === '"') { field += '"'; i++; }
+                    else if (ch === '"') { inQuotes = false; }
+                    else { field += ch; }
+                } else {
+                    if (ch === '"') { inQuotes = true; }
+                    else if (ch === ',') { row.push(field); field = ''; }
+                    else if (ch === '\r') { /* skip */ }
+                    else if (ch === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
+                    else { field += ch; }
+                }
+            }
+            if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+            return rows.filter(r => r.some(c => c.trim() !== ''));
+        }
+
+        // "2026/06/15" のような日付文字列をDateに変換
+        function parseSheetDate(str) {
+            if (!str) return null;
+            const m = str.trim().match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
+            if (!m) return null;
+            return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+        }
+
+        // Googleドライブの共有リンクを画像表示用URLに変換
+        function driveImageUrl(url) {
+            if (!url) return '';
+            let m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+            if (!m) m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+            if (m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000`;
+            return url;
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderNewsCard(row) {
+            const img1 = driveImageUrl((row[2] || '').trim());
+            const img2 = driveImageUrl((row[3] || '').trim());
+            const text = (row[4] || '').trim();
+            const images = [img1, img2].filter(Boolean);
+
+            let imagesHtml = '';
+            if (images.length === 1) {
+                imagesHtml = `<div class="rounded-2xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="${images[0]}" alt="お知らせ画像" class="w-full h-auto object-cover" loading="lazy" onerror="this.parentElement.style.display='none';">
+                </div>`;
+            } else if (images.length === 2) {
+                imagesHtml = `<div class="grid grid-cols-2 gap-3 mb-4">
+                    <div class="rounded-2xl overflow-hidden aspect-square bg-gray-100">
+                        <img src="${images[0]}" alt="お知らせ画像1" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.style.display='none';">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden aspect-square bg-gray-100">
+                        <img src="${images[1]}" alt="お知らせ画像2" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.style.display='none';">
+                    </div>
+                </div>`;
+            }
+
+            const textHtml = text
+                ? `<p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHtml(text).replace(/\n/g, '<br>')}</p>`
+                : '';
+
+            return `<div class="bg-white rounded-[2rem] p-6 md:p-8 soft-shadow reveal">${imagesHtml}${textHtml}</div>`;
+        }
+
+        async function loadNews() {
+            const newsSection = document.getElementById('news-section');
+            const newsList = document.getElementById('news-list');
+            if (!newsSection || !newsList) return;
+
+            try {
+                const res = await fetch(NEWS_SHEET_URL);
+                if (!res.ok) throw new Error('fetch failed: ' + res.status);
+                const csv = await res.text();
+                const rows = parseCSVFull(csv);
+                if (rows.length < 2) throw new Error('データが空です');
+
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const activeNews = rows.slice(1).filter(r => {
+                    const start = parseSheetDate(r[0]);
+                    const end = parseSheetDate(r[1]);
+                    const text = (r[4] || '').trim();
+                    const img1 = (r[2] || '').trim();
+                    const img2 = (r[3] || '').trim();
+                    if (!start || !end) return false;
+                    if (!text && !img1 && !img2) return false;
+                    return today >= start && today <= end;
+                });
+
+                if (activeNews.length === 0) {
+                    newsSection.style.display = 'none';
+                    return;
+                }
+
+                newsList.innerHTML = activeNews.map(renderNewsCard).join('');
+                newsSection.style.display = '';
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+
+                // 表示直後にreveal要素をアクティブ化
+                newsList.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+
+            } catch (e) {
+                console.warn('お知らせの取得に失敗しました:', e);
+                newsSection.style.display = 'none';
+            }
+        }
+
+        loadNews();
+
+        // ページトップボタン
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            const revealEls = document.querySelectorAll('.reveal');
+
+            // IntersectionObserver非対応環境（古いiOS等）は全部即表示
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(el => el.classList.add('active'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // 一度発火したら監視解除
+                    }
+                });
+            }, {
+                threshold: 0,           // iOSは0が最も確実
+                rootMargin: '0px 0px -60px 0px' // 画面下端より60px手前で発火
+            });
+
+            revealEls.forEach(el => observer.observe(el));
+
+            // ヒーローセクションは即時表示
+            setTimeout(() => {
+                document.querySelectorAll('section:first-of-type .reveal').forEach(el => el.classList.add('active'));
+            }, 50);
+        });
+    </script>
+</body>
+</html>

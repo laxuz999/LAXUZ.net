@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>カレンダー登録</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=IBM+Plex+Mono:wght@500&display=swap');
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#222637;--border:#2e3350;
+  --accent:#4f8ef7;--accent2:#7c5cfc;--green:#34d399;--red:#f87171;
+  --text:#e8eaf0;--muted:#6b7280;--radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+.page{display:none;min-height:100vh;padding-bottom:60px;}
+.page.active{display:block;}
+.header{background:linear-gradient(135deg,#1a1d27,#0f1117);border-bottom:1px solid var(--border);padding:16px 16px 14px;position:sticky;top:0;z-index:10;}
+.header-row{display:flex;align-items:center;gap:10px;}
+.header-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.header h1{font-size:17px;font-weight:700;}
+.header p{font-size:11px;color:var(--muted);margin-top:3px;padding-left:40px;}
+.back-btn{background:none;border:none;color:var(--accent);font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:4px;}
+.back-btn:active{opacity:.6;}
+.section{padding:16px 16px 0;}
+.label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+input[type=text],textarea{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.65;padding:12px 14px;outline:none;transition:border-color .2s;-webkit-appearance:none;}
+input[type=text]:focus,textarea:focus{border-color:var(--accent);}
+input[type=text]::placeholder,textarea::placeholder{color:var(--muted);}
+textarea{resize:none;}
+.field-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;}
+.field-item{border-bottom:1px solid var(--border);}
+.field-item:last-child{border-bottom:none;}
+.field-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:10px 14px 0;}
+.field-input{width:100%;background:transparent;border:none;color:var(--text);font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;padding:6px 14px 10px;outline:none;-webkit-appearance:none;}
+.field-input[data-key=detail]{min-height:80px;resize:none;}
+.btn{width:100%;padding:16px;border-radius:var(--radius);border:none;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700;cursor:pointer;-webkit-appearance:none;transition:all .15s;display:block;}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;letter-spacing:.04em;}
+.btn-primary:active{transform:scale(.97);opacity:.9;}
+.btn-primary:disabled{opacity:.4;}
+.btn-green{background:var(--green);color:#0f1117;font-size:16px;}
+.btn-green:active{transform:scale(.97);}
+.btn-sub{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:13px;font-weight:500;padding:14px;}
+.btn-sub:active{opacity:.7;}
+.error-box{background:rgba(248,113,113,.08);border:1px solid var(--red);border-radius:var(--radius);padding:14px;font-size:13px;color:var(--red);line-height:1.6;}
+.hint{font-size:11px;color:var(--muted);margin-top:6px;}
+.g8{height:8px;}.g12{height:12px;}.g16{height:16px;}.g20{height:20px;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: 入力 -->
+<div class="page active" id="page-input">
+  <div class="header">
+    <div class="header-row">
+      <div class="header-icon">📅</div>
+      <h1>カレンダー登録</h1>
+    </div>
+    <p>コピーした予定文をカレンダーに登録</p>
+  </div>
+
+  <div class="section">
+    <div class="g16"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;" class="label">
+      <span>予定文</span>
+      <span id="charCount" style="font-size:10px;color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;"></span>
+    </div>
+    <textarea id="inputText" rows="10" placeholder="ページを開くと自動で貼り付けられます（手動入力も可）v1.5"></textarea>
+  </div>
+
+  <div class="section g20">
+    <button class="btn btn-primary" id="parseBtn" onclick="parseText()">✦ 解析して登録内容を作成</button>
+  </div>
+
+  <div class="section" id="errorArea"></div>
+</div>
+
+
+<!-- PAGE 2: 確認・編集 -->
+<div class="page" id="page-result">
+  <div class="header">
+    <button class="back-btn" onclick="goBack()">← 戻る</button>
+    <div class="g8"></div>
+    <div class="header-row">
+      <div class="header-icon">✏️</div>
+      <h1>内容を確認・編集</h1>
+    </div>
+    <p>各項目を編集してからカレンダーに登録</p>
+  </div>
+
+  <div class="section">
+    <div class="g16"></div>
+    <div class="field-group">
+      <div class="field-item">
+        <div class="field-label">タイトル</div>
+        <input class="field-input" id="f-title" type="text">
+      </div>
+      <div class="field-item">
+        <div class="field-label">開始日時（JST）</div>
+        <input class="field-input" id="f-start-jst" type="text" placeholder="例: 2026/04/19 12:00">
+      </div>
+      <div class="field-item">
+        <div class="field-label">終了日時（JST）</div>
+        <input class="field-input" id="f-end-jst" type="text" placeholder="例: 2026/04/19 15:00">
+      </div>
+      <div class="field-item">
+        <div class="field-label">場所</div>
+        <input class="field-input" id="f-location" type="text">
+      </div>
+      <div class="field-item">
+        <div class="field-label">詳細</div>
+        <textarea class="field-input" id="f-detail" rows="6"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button class="btn btn-green" onclick="openCalendar()">📅 Googleカレンダーで開く</button>
+    <div class="g8"></div>
+    <button class="btn btn-sub" onclick="copyUrl()">🔗 URLをコピー</button>
+    <div class="g20"></div>
+  </div>
+</div>
+
+
+<script>
+// ── 初期化 ──
+window.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('inputText').addEventListener('input', updateCharCount);
+  try {
+    const text = await navigator.clipboard.readText();
+    if (text.trim()) {
+      document.getElementById('inputText').value = text;
+      updateCharCount();
+    }
+  } catch(e) {}
+});
+
+function updateCharCount() {
+  const len = document.getElementById('inputText').value.length;
+  document.getElementById('charCount').textContent = len > 0 ? len + '文字' : '';
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+function goBack() { showPage('page-input'); }
+
+// ── プロンプト ──
+function buildPrompt(text) {
+  return `あなたはエアコン・家電クリーニング業者の予定文から、Googleカレンダー登録用の情報を抽出するアシスタントです。
+以下のルールに従って、JSONのみを出力してください。前置き・説明・コードブロックは一切不要です。
+
+## 会社名
+- 「おまかせ！」がある → "ユアマ公募"
+- 「高評価プロ」がある → "ユアマ公募"
+- 「ラクサス 050-6875-5609」がある → "LAXUZ"
+- 「家族の健康の為に！」がある → "ユアマ"
+- それ以外 → ""
+
+## 作業内容コード（複数あればスペースなしで結合）
+N=通常タイプ, R=お掃除機能付き, S=室外機洗浄, K=消臭抗菌コート, E=エコ洗剤, D=ドレンホース洗浄, A=Aセット, B=Bセット, i=防虫キャップ, T=ベランダ清掃, W=縦型洗濯機, EL=レンジフード, V=換気扇, H=空気清浄機
+例: 通常2台 → "N2" / お掃除機能付き1台+室外機1台 → "R1S1"
+
+## 訪問地
+大阪市〇〇区 → 〇〇区のみ / その他の市 → 〇〇市のみ
+
+## 氏名
+「氏名：」または「お名前：」から姓のみ取り出し「〇〇様」とする
+
+## タイトル
+"会社名 作業コード 訪問地 氏名" を半角スペース区切りで結合
+
+## 日時（重要）
+「作業日時：」から読み取る。入力はJST（UTC+9）。
+startJST・endJST は "YYYY/MM/DD HH:mm" 形式で出力（UTC変換不要）。
+「申込日」は無視。
+
+## 場所
+住所全体。マンション名・号室・部屋番号は除く。不明なら"不明"。
+
+## 詳細
+入力テキスト全文をそのまま。
+
+## 出力（JSONのみ・コードブロック禁止）
+- detailフィールド内の改行は必ず \n とエスケープすること
+- 生の改行をJSONの文字列内に含めないこと
+{"title":"","startJST":"","endJST":"","location":"","detail":""}
+
+---
+予定文:
+${text}`;
+}
+
+// ── JST ローカル時刻フォーマット（UTC変換しない）──
+// ctz=Asia/Tokyo と組み合わせることで正しいタイムゾーンで登録される
+function jstToLocal(jstStr) {
+  const m = jstStr.match(/(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})\s+(\d{1,2}):(\d{2})/);
+  if (!m) return '';
+  const [,y,mo,d,h,mi] = m;
+  const pad = n => String(n).padStart(2,'0');
+  return `${y}${pad(mo)}${pad(d)}T${pad(h)}${pad(mi)}00`;
+}
+
+// ── 解析（api.php経由） ──
+async function parseText() {
+  const input = document.getElementById('inputText').value.trim();
+  const errArea = document.getElementById('errorArea');
+  const btn = document.getElementById('parseBtn');
+
+  errArea.innerHTML = '';
+  if (!input) { errArea.innerHTML = '<div class="g12"></div><div class="error-box">予定文を入力してください</div>'; return; }
+
+  btn.disabled = true;
+  btn.textContent = '解析中…';
+
+  try {
+    const res = await fetch('api.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: buildPrompt(input) }] }],
+        generationConfig: { temperature: 0.1, maxOutputTokens: 4096 }
+      })
+    });
+
+    if (!res.ok) { const e = await res.json(); throw new Error(e?.error?.message || 'HTTP ' + res.status); }
+    const data = await res.json();
+    const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+    // { } の位置で確実に抽出
+    const start = raw.indexOf('{');
+    const end = raw.lastIndexOf('}');
+    if (start === -1 || end === -1) throw new Error('JSONが見つかりません:\n' + raw.substring(0, 200));
+    let jsonStr = raw.substring(start, end + 1);
+
+    let parsed;
+    try {
+      parsed = JSON.parse(jsonStr);
+    } catch(je) {
+      // detail内の制御文字・改行を修正して再試行
+      try {
+        // プロパティ値内の生の改行をエスケープ
+        const fixed = jsonStr.replace(/(?<=":"[^"]*?)\n(?=[^"]*?")/g, '\\n')
+                             .replace(/[\x00-\x1F\x7F]/g, c => {
+                               if (c === '\n') return '\\n';
+                               if (c === '\r') return '\\r';
+                               if (c === '\t') return '\\t';
+                               return '';
+                             });
+        parsed = JSON.parse(fixed);
+      } catch(je2) {
+        // 最終手段: detailフィールドだけ別途抽出
+        const titleM    = jsonStr.match(/"title"\s*:\s*"([^"]*)"/);
+        const startM    = jsonStr.match(/"startJST"\s*:\s*"([^"]*)"/);
+        const endM      = jsonStr.match(/"endJST"\s*:\s*"([^"]*)"/);
+        const locationM = jsonStr.match(/"location"\s*:\s*"([^"]*)"/);
+        const detailM   = jsonStr.match(/"detail"\s*:\s*"([\s\S]*?)"\s*\}/);
+        if (!titleM) throw new Error('解析失敗: ' + je2.message);
+        parsed = {
+          title:    titleM[1]    || '',
+          startJST: startM?.[1]  || '',
+          endJST:   endM?.[1]    || '',
+          location: locationM?.[1] || '',
+          detail:   detailM?.[1]?.replace(/\\n/g,'\n') || ''
+        };
+      }
+    }
+
+    showResultPage(parsed);
+  } catch(e) {
+    errArea.innerHTML = `<div class="g12"></div><div class="error-box">エラー: ${escHtml(e.message)}</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '✦ 解析して登録内容を作成';
+  }
+}
+
+// ── 結果ページ表示 ──
+function showResultPage(d) {
+  document.getElementById('f-title').value     = d.title    || '';
+  document.getElementById('f-start-jst').value = d.startJST || '';
+  document.getElementById('f-end-jst').value   = d.endJST   || '';
+  document.getElementById('f-location').value  = d.location || '';
+  document.getElementById('f-detail').value    = d.detail   || '';
+  showPage('page-result');
+}
+
+// ── カレンダーURL構築 ──
+function buildGcalUrl() {
+  const title    = document.getElementById('f-title').value;
+  const startJST = document.getElementById('f-start-jst').value;
+  const endJST   = document.getElementById('f-end-jst').value;
+  const location = document.getElementById('f-location').value;
+  const detail   = document.getElementById('f-detail').value;
+
+  const startLocal = jstToLocal(startJST);
+  const endLocal   = jstToLocal(endJST);
+
+  if (!startLocal || !endLocal) {
+    alert('日時の形式が正しくありません。\n例: 2026/04/19 12:00');
+    return null;
+  }
+  // ctz=Asia/Tokyo を指定することで JST のローカル時刻として正しく登録される
+  const p = new URLSearchParams({ text: title, dates: `${startLocal}/${endLocal}`, location, details: detail, ctz: 'Asia/Tokyo' });
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&' + p.toString();
+}
+
+function openCalendar() {
+  const url = buildGcalUrl();
+  if (url) window.open(url, '_blank');
+}
+
+function copyUrl() {
+  const url = buildGcalUrl();
+  if (!url) return;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => alert('URLをコピーしました'));
+  } else {
+    const t = document.createElement('textarea');
+    t.value = url; document.body.appendChild(t); t.select();
+    document.execCommand('copy'); document.body.removeChild(t);
+    alert('URLをコピーしました');
+  }
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>

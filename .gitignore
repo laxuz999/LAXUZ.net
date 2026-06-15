@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Backup archive (not needed on server)
+files.zip
+files/
+
+# Contains a hardcoded API key - do not commit
+img/calendar/config.php

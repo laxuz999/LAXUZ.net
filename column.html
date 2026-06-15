@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お掃除コラム | Laxuz（ラクサス）大阪のハウスクリーニング</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="エアコン・洗濯機・レンジフードのお掃除頻度やプロが教えるカビ・油汚れ対策を詳しく解説。大阪のハウスクリーニング専門店Laxuzによるお役立ちコラム。">
+    <meta name="keywords" content="エアコン掃除 頻度,洗濯機 カビ対策,レンジフード 油汚れ,プロ 洗剤 違い,ハウスクリーニング 大阪">
+    <meta property="og:title" content="お掃除コラム | Laxuz">
+    <meta property="og:description" content="プロが教えるエアコン・洗濯機・レンジフードのお掃除頻度とカビ・油汚れ対策。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://laxuz.jp/column.html">
+    <meta property="og:image" content="https://laxuz.jp/img/hero.jpg">
+    <link rel="canonical" href="https://laxuz.jp/column.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#0F766E',
+                            light: '#CCFBF1',
+                            accent: '#F59E0B',
+                            bg: '#FFFAED',
+                            line: '#06C755',
+                            lineHover: '#05B34C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
+                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
+                        mincho: ['"Shippori Mincho"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 100px; }
+
+        .soft-shadow { box-shadow: 0 8px 32px -8px rgba(15,118,110,0.10); }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Article card */
+        .article-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 56px -12px rgba(15,118,110,0.16);
+        }
+
+        /* TOC active */
+        .toc-link { transition: all 0.2s; border-left: 3px solid transparent; padding-left: 12px; }
+        .toc-link.active { border-color: #0F766E; color: #0F766E; font-weight: 700; }
+        .toc-link:hover { color: #0F766E; border-color: #CCFBF1; }
+
+        /* Tip box */
+        .tip-box {
+            background: linear-gradient(135deg, #f0fdf9 0%, #FFFAED 100%);
+            border-left: 4px solid #0F766E;
+        }
+
+        /* Danger box */
+        .danger-box {
+            background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+            border-left: 4px solid #F59E0B;
+        }
+
+        /* Comparison table */
+        .compare-table th { background: #0F766E; color: white; }
+        .compare-table td { border-bottom: 1px solid #e2e8f0; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:nth-child(even) td { background: #f8fafc; }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 8px;
+            border-radius: 99px;
+            background: #e2e8f0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #0F766E, #14b8a6);
+            transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        /* Sticky TOC */
+        @media (min-width: 1024px) {
+            .toc-sticky { position: sticky; top: 110px; }
+        }
+
+        /* Chapter badge */
+        .chapter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #0F766E;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 99px;
+        }
+
+        /* Icon circle */
+        .icon-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* LINE pulse */
+        @keyframes line-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(6,199,85,0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(6,199,85,0); }
+        }
+        .line-pulse { animation: line-pulse 2.5s ease-in-out infinite; }
+
+        /* Floating btn */
+        .float-line-btn { bottom: 1.25rem; right: 1.25rem; }
+        @media(min-width:768px){ .float-line-btn { bottom: 2.5rem; right: 2.5rem; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "プロが教える！エアコン・洗濯機・レンジフードのお掃除完全ガイド",
+      "author": { "@type": "Organization", "name": "Laxuz" },
+      "publisher": { "@type": "Organization", "name": "Laxuz", "url": "https://laxuz.jp" },
+      "description": "エアコン・洗濯機・レンジフードの正しい掃除頻度とプロが教えるカビ・油汚れ対策を詳しく解説します。",
+      "url": "https://laxuz.jp/column.html"
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-brand-light" style="top:0;left:0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                    <i data-lucide="leaf" class="w-6 h-6"></i>
+                </div>
+                <span class="font-maru font-bold text-xl text-gray-800 tracking-wider">Laxuz</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-5 text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-brand-primary font-medium transition flex items-center gap-1.5">
+                    <i data-lucide="home" class="w-4 h-4"></i> トップ
+                </a>
+                <a href="index.html#reviews" class="text-gray-500 hover:text-brand-primary font-medium transition">実績・口コミ</a>
+                <a href="index.html#area" class="text-gray-500 hover:text-brand-primary font-medium transition">エリア</a>
+                <a href="index.html#menu" class="text-gray-500 hover:text-brand-primary font-medium transition">料金</a>
+                <a href="index.html#faq" class="text-gray-500 hover:text-brand-primary font-medium transition">FAQ</a>
+                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> LINE予約
+                </a>
+            </nav>
+            <!-- モバイルメニューボタン -->
+            <button onclick="document.getElementById('col-mobile-menu').classList.toggle('translate-x-full')" class="md:hidden text-gray-600 bg-brand-light p-2 rounded-full">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- モバイルメニュー -->
+        <div id="col-mobile-menu" class="fixed inset-0 bg-brand-bg z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6 space-y-4" style="height:100vh;">
+            <button onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="absolute top-6 right-6 text-gray-500 bg-white rounded-full p-2 shadow-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <a href="index.html" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-brand-primary"></i>トップへ戻る</a>
+            <a href="index.html#reviews" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="star" class="w-5 h-5 text-brand-primary"></i>実績・口コミ</a>
+            <a href="index.html#area" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>訪問エリア</a>
+            <a href="index.html#menu" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</a>
+            <a href="index.html#faq" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="help-circle" class="w-5 h-5 text-brand-primary"></i>よくある質問</a>
+            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4">
+                <i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約
+            </a>
+        </div>
+    </header>
+
+    <div class="flex-grow pt-20">
+
+        <!-- Hero -->
+        <section class="relative bg-brand-primary overflow-hidden py-16 lg:py-24">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-teal-400 opacity-10 blur-3xl -mr-32 -mt-32"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-sm font-bold px-5 py-2 rounded-full mb-6">
+                    <i data-lucide="book-open" class="w-4 h-4 text-brand-accent"></i> お掃除コラム
+                </span>
+                <h1 class="font-mincho text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                    プロが教える！<br>
+                    <span class="text-brand-accent">エアコン・洗濯機・レンジフード</span><br>
+                    お掃除完全ガイド
+                </h1>
+                <p class="text-teal-100 text-lg leading-relaxed max-w-2xl mx-auto">
+                    正しい頻度とサインを知れば、カビや油汚れの悩みは大きく減らせます。<br>大阪のクリーニングプロが、知っておきたい知識をわかりやすく解説します。
+                </p>
+                <!-- 目次ジャンプ -->
+                <div class="mt-10 flex flex-wrap justify-center gap-3">
+                    <a href="#aircon" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm px-4 py-2 rounded-full transition flex items-center gap-1.5">
+                        <i data-lucide="wind" class="w-4 h-4"></i> エアコン
+                    </a>
+                    <a href="#washing" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm px-4 py-2 rounded-full transition flex items-center gap-1.5">
+                        <i data-lucide="loader" class="w-4 h-4"></i> 洗濯機
+                    </a>
+                    <a href="#rangehood" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm px-4 py-2 rounded-full transition flex items-center gap-1.5">
+                        <i data-lucide="utensils" class="w-4 h-4"></i> レンジフード
+                    </a>
+                    <a href="#pro-vs-diy" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm px-4 py-2 rounded-full transition flex items-center gap-1.5">
+                        <i data-lucide="flask-conical" class="w-4 h-4"></i> プロvs市販
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="flex gap-12 lg:gap-16 items-start">
+
+                <!-- Sticky TOC (desktop) -->
+                <aside class="hidden lg:block w-64 flex-shrink-0 toc-sticky">
+                    <div class="bg-brand-bg rounded-2xl p-6 soft-shadow border border-brand-light">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">目次</p>
+                        <nav class="space-y-2 text-sm">
+                            <a href="#aircon" class="toc-link block py-1 text-gray-600" id="toc-aircon">① エアコンの掃除頻度・サイン</a>
+                            <a href="#washing" class="toc-link block py-1 text-gray-600" id="toc-washing">② 洗濯機のカビ対策・頻度</a>
+                            <a href="#rangehood" class="toc-link block py-1 text-gray-600" id="toc-rangehood">③ レンジフードの油汚れと換気</a>
+                            <a href="#pro-vs-diy" class="toc-link block py-1 text-gray-600" id="toc-pro">④ プロvs市販洗剤の違い</a>
+                            <a href="#cta" class="toc-link block py-1 text-gray-600" id="toc-cta">プロに依頼する</a>
+                        </nav>
+                        <div class="mt-6 pt-6 border-t border-brand-light">
+                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-white text-sm font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-brand-lineHover transition line-pulse">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> LINEで無料相談
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Articles -->
+                <main class="flex-1 min-w-0 space-y-20">
+
+                    <!-- ① エアコン -->
+                    <article id="aircon" class="reveal">
+                        <div class="chapter-badge mb-4">
+                            <i data-lucide="wind" class="w-3.5 h-3.5"></i> CHAPTER 01
+                        </div>
+                        <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800 mb-2 leading-snug">
+                            エアコンの掃除頻度と<br>「そろそろ限界」のサイン
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-8">最終更新：2025年6月</p>
+
+                        <!-- 推奨頻度 -->
+                        <div class="bg-brand-bg rounded-2xl p-6 mb-8 border border-brand-light">
+                            <h3 class="font-maru font-bold text-gray-800 mb-5 flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-5 h-5 text-brand-primary"></i> 推奨お掃除頻度
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm font-bold mb-1">
+                                        <span>フィルター掃除（自分で）</span>
+                                        <span class="text-brand-primary">2週間に1回</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:95%" data-width="95"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm font-bold mb-1">
+                                        <span>内部・熱交換器（プロ洗浄）</span>
+                                        <span class="text-brand-primary">年に1〜2回</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:30%" data-width="30"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm font-bold mb-1">
+                                        <span>ドレンパン・ファン（プロ洗浄）</span>
+                                        <span class="text-brand-primary">1〜2年に1回</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:20%" data-width="20"></div></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">※ 使用頻度・環境によって異なります。ペット・小さなお子様のいるご家庭はより頻繁に。</p>
+                        </div>
+
+                        <!-- サインリスト -->
+                        <h3 class="font-maru font-bold text-gray-800 text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-brand-accent"></i>
+                            これが出たらプロに頼むタイミング
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 soft-shadow article-card">
+                                <div class="icon-circle bg-red-50 text-red-500"><i data-lucide="wind" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">カビ・ほこりのニオイ</p>
+                                    <p class="text-gray-500 text-xs leading-relaxed">運転開始直後にカビっぽい・酸っぱいニオイがする場合、内部にカビが発生しています。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 soft-shadow article-card">
+                                <div class="icon-circle bg-blue-50 text-blue-500"><i data-lucide="droplets" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">水漏れ・結露が増えた</p>
+                                    <p class="text-gray-500 text-xs leading-relaxed">ドレンパンの汚れ詰まりが原因。放置すると天井・家具が傷む場合があります。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 soft-shadow article-card">
+                                <div class="icon-circle bg-yellow-50 text-yellow-600"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">電気代が急に増えた</p>
+                                    <p class="text-gray-500 text-xs leading-relaxed">フィルターやフィンの目詰まりにより、冷暖房効率が落ちて電力消費が増えます。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 soft-shadow article-card">
+                                <div class="icon-circle bg-green-50 text-brand-primary"><i data-lucide="thermometer" class="w-6 h-6"></i></div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">冷え・暖まりが悪い</p>
+                                    <p class="text-gray-500 text-xs leading-relaxed">設定温度に届かない場合、熱交換器の汚れが原因のことが多いです。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box rounded-2xl p-5">
+                            <p class="font-bold text-brand-primary mb-1 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロのヒント</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">フィルターは自分で掃除できますが、熱交換器（アルミフィン）やドレンパンの内部には自分では手が届きません。市販のエアコンスプレーは奥まで届かず、かえってカビを広げるリスクがあります。年1回のプロ洗浄がもっともコスパが高い選択です。</p>
+                        </div>
+                    </article>
+
+                    <hr class="border-brand-light">
+
+                    <!-- ② 洗濯機 -->
+                    <article id="washing" class="reveal">
+                        <div class="chapter-badge mb-4">
+                            <i data-lucide="loader" class="w-3.5 h-3.5"></i> CHAPTER 02
+                        </div>
+                        <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800 mb-2 leading-snug">
+                            洗濯機のカビ対策と<br>正しいお掃除頻度
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-8">最終更新：2025年6月</p>
+
+                        <!-- カビ発生の仕組み -->
+                        <div class="bg-white border border-gray-100 rounded-2xl p-6 mb-8 soft-shadow">
+                            <h3 class="font-maru font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <i data-lucide="info" class="w-5 h-5 text-brand-primary"></i> なぜ洗濯槽にカビが生えるのか？
+                            </h3>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="flex-1 text-center bg-gray-50 rounded-xl p-4">
+                                    <div class="text-3xl mb-2">💧</div>
+                                    <p class="font-bold text-sm text-gray-800 mb-1">湿気</p>
+                                    <p class="text-xs text-gray-500">洗濯後のフタを閉めると内部が蒸れ、湿度が上昇。カビの好む環境に。</p>
+                                </div>
+                                <div class="hidden sm:flex items-center text-brand-light text-2xl font-bold">+</div>
+                                <div class="flex-1 text-center bg-gray-50 rounded-xl p-4">
+                                    <div class="text-3xl mb-2">🧴</div>
+                                    <p class="font-bold text-sm text-gray-800 mb-1">洗剤カス</p>
+                                    <p class="text-xs text-gray-500">溶け残った洗剤・柔軟剤がカビの栄養になります。</p>
+                                </div>
+                                <div class="hidden sm:flex items-center text-brand-light text-2xl font-bold">+</div>
+                                <div class="flex-1 text-center bg-gray-50 rounded-xl p-4">
+                                    <div class="text-3xl mb-2">🌡️</div>
+                                    <p class="font-bold text-sm text-gray-800 mb-1">温度</p>
+                                    <p class="text-xs text-gray-500">夏は特に槽の裏側が高温多湿になり、カビが急増しやすい。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 日常ケアvs プロ -->
+                        <h3 class="font-maru font-bold text-gray-800 text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="calendar-check" class="w-5 h-5 text-brand-primary"></i> 日常ケアとプロ洗浄の使い分け
+                        </h3>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start gap-4 bg-brand-bg border border-brand-light rounded-xl p-4">
+                                <span class="bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 mt-0.5">毎回</span>
+                                <p class="text-sm text-gray-700 leading-relaxed">洗濯後はフタを開けて換気。糸くずフィルターの清掃。</p>
+                            </div>
+                            <div class="flex items-start gap-4 bg-brand-bg border border-brand-light rounded-xl p-4">
+                                <span class="bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 mt-0.5">月1回</span>
+                                <p class="text-sm text-gray-700 leading-relaxed">市販の洗濯槽クリーナー（塩素系）で槽洗浄コースを実施。ただし表面の汚れのみに効果あり。</p>
+                            </div>
+                            <div class="flex items-start gap-4 bg-white border-2 border-brand-primary rounded-xl p-4 soft-shadow">
+                                <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 mt-0.5">年1〜2回</span>
+                                <div>
+                                    <p class="text-sm text-gray-700 leading-relaxed"><strong class="text-brand-primary">プロによる完全分解洗浄。</strong>槽の裏・パルセーター・ドラムの内側まで分解して根こそぎ除去。市販クリーナーでは届かない奥のカビを完全除去。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="danger-box rounded-2xl p-5 mb-8">
+                            <p class="font-bold text-brand-accent mb-1 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4"></i> 注意！こんな状態は早めにご相談を</p>
+                            <ul class="text-sm text-gray-600 space-y-1 leading-relaxed">
+                                <li>• 洗濯後の衣類に黒いカスや茶色いワカメ状のものが付く</li>
+                                <li>• 洗濯直後なのに生乾きのようなニオイがする</li>
+                                <li>• 洗濯槽クリーナーを使っても改善しない</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-box rounded-2xl p-5">
+                            <p class="font-bold text-brand-primary mb-1 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロのヒント</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">「洗濯槽クリーナーを使っているのに黒いカスが出る」というお客様が多いのですが、これは塩素系クリーナーが浮かせたカビが出てきているサインです。完全に取り除くには分解洗浄しか方法がありません。Laxuzでは縦型洗濯機を完全分解して洗浄します。</p>
+                        </div>
+                    </article>
+
+                    <hr class="border-brand-light">
+
+                    <!-- ③ レンジフード -->
+                    <article id="rangehood" class="reveal">
+                        <div class="chapter-badge mb-4">
+                            <i data-lucide="utensils" class="w-3.5 h-3.5"></i> CHAPTER 03
+                        </div>
+                        <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800 mb-2 leading-snug">
+                            レンジフードの油汚れが<br>換気効率を下げる理由
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-8">最終更新：2025年6月</p>
+
+                        <!-- 換気効率の影響 -->
+                        <div class="bg-white border border-gray-100 rounded-2xl p-6 mb-8 soft-shadow">
+                            <h3 class="font-maru font-bold text-gray-800 mb-5 flex items-center gap-2">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-brand-primary"></i> 油汚れ蓄積による換気効率の低下
+                            </h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1"><span class="font-bold">クリーニング直後</span><span class="text-brand-primary font-bold">換気効率 100%</span></div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="100" style="width:100%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1"><span>6ヶ月後（毎日使用）</span><span class="text-yellow-600 font-bold">換気効率 約70%</span></div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="70" style="width:70%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1"><span>1年後（未清掃）</span><span class="text-red-500 font-bold">換気効率 約40%</span></div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="40" style="width:40%;background:linear-gradient(90deg,#dc2626,#ef4444)"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1"><span>2〜3年放置</span><span class="text-red-700 font-bold">換気効率 約20%以下</span></div>
+                                    <div class="progress-bar"><div class="progress-fill" data-width="20" style="width:20%;background:linear-gradient(90deg,#991b1b,#dc2626)"></div></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">※ 目安の数値です。使用環境・調理内容によって異なります。</p>
+                        </div>
+
+                        <!-- 放置のリスク -->
+                        <h3 class="font-maru font-bold text-gray-800 text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="flame" class="w-5 h-5 text-red-500"></i> 放置するとどうなる？
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-red-50 border border-red-100 rounded-xl p-4 text-center article-card">
+                                <div class="text-2xl mb-2">🔥</div>
+                                <p class="font-bold text-red-700 text-sm mb-1">火災リスク</p>
+                                <p class="text-xs text-gray-500">油汚れが蓄積すると引火しやすくなり、火災の原因になります。</p>
+                            </div>
+                            <div class="bg-orange-50 border border-orange-100 rounded-xl p-4 text-center article-card">
+                                <div class="text-2xl mb-2">😷</div>
+                                <p class="font-bold text-orange-700 text-sm mb-1">臭いと空気質の悪化</p>
+                                <p class="text-xs text-gray-500">換気不足で調理中の煙・臭いがキッチンに充満しやすくなります。</p>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-100 rounded-xl p-4 text-center article-card">
+                                <div class="text-2xl mb-2">⚙️</div>
+                                <p class="font-bold text-yellow-700 text-sm mb-1">モーター故障</p>
+                                <p class="text-xs text-gray-500">油がモーターに固着すると異音が出始め、最終的に故障します。</p>
+                            </div>
+                        </div>
+
+                        <!-- 推奨頻度 -->
+                        <div class="bg-brand-bg border border-brand-light rounded-2xl p-6 mb-8">
+                            <h3 class="font-maru font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-5 h-5 text-brand-primary"></i> お掃除の推奨頻度
+                            </h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0">月1回</span>
+                                    <p class="text-gray-700">フィルターを外して中性洗剤で水洗い（自分でできる範囲）</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full flex-shrink-0">年1回</span>
+                                    <p class="text-gray-700"><strong>プロによる完全分解洗浄</strong>。内部のファン・モーターカバー・整流板まで徹底洗浄。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box rounded-2xl p-5">
+                            <p class="font-bold text-brand-primary mb-1 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロのヒント</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">重曹・セスキ炭酸ソーダなどでフィルターを漬け置き洗いすることで、ある程度の油汚れは落とせます。ただしシロッコファン（内部のプロペラ）の奥の汚れは家庭用洗剤では溶解しきれません。年1回のプロ洗浄で換気効率を維持し、電気代・火災リスクの両方を抑えましょう。</p>
+                        </div>
+                    </article>
+
+                    <hr class="border-brand-light">
+
+                    <!-- ④ プロvs市販 -->
+                    <article id="pro-vs-diy" class="reveal">
+                        <div class="chapter-badge mb-4">
+                            <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i> CHAPTER 04
+                        </div>
+                        <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800 mb-2 leading-snug">
+                            プロの洗剤と市販洗剤、<br>何がどう違うのか？
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-8">最終更新：2025年6月</p>
+
+                        <p class="text-gray-600 leading-relaxed mb-8">「市販の洗剤でもきれいになるのでは？」と思う方も多いですが、プロが使う洗剤・機材とは根本的に異なります。正しく理解しておくと、日常ケアとプロ依頼の使い分けに役立ちます。</p>
+
+                        <!-- 比較表 -->
+                        <div class="overflow-x-auto mb-8">
+                            <table class="compare-table w-full text-sm rounded-2xl overflow-hidden soft-shadow border border-gray-100">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-3 text-left font-bold text-sm">比較項目</th>
+                                        <th class="px-4 py-3 text-center font-bold text-sm">市販洗剤・スプレー</th>
+                                        <th class="px-4 py-3 text-center font-bold text-sm">プロ使用（Laxuz）</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">洗浄力</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">表面の軽い汚れに対応</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">奥まで浸透・根こそぎ除去</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">濃度・成分</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">安全のため薄めに設定</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">業務用高濃度・適切に希釈使用</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">機材</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">スプレー・雑巾</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">高圧洗浄機・専用ノズル</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">安全性</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">成分確認が難しい</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">子供・ペット対応洗剤選定</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">分解作業</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">なし（外側のみ）</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">内部まで完全分解して洗浄</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">カビへの効果</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">一時的に見えなくなる程度</td>
+                                        <td class="px-4 py-3 text-center text-brand-primary font-bold">根本から除菌・除去</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-gray-700">コスト</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">安価（数百円〜）</td>
+                                        <td class="px-4 py-3 text-center text-gray-600">1万円前後〜（機器による）</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- どちらが向いているか -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5">
+                                <p class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                    <i data-lucide="home" class="w-5 h-5 text-gray-500"></i> 自分でのケアが向いている場面
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>エアコンフィルターのほこり取り</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>レンジフードの表面・フィルターの拭き取り</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>糸くずフィルターの掃除</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>日常的な軽い汚れの維持管理</li>
+                                </ul>
+                            </div>
+                            <div class="bg-brand-bg border border-brand-light rounded-2xl p-5">
+                                <p class="font-bold text-brand-primary mb-3 flex items-center gap-2">
+                                    <i data-lucide="wrench" class="w-5 h-5 text-brand-primary"></i> プロに任せた方が良い場面
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5"></i>エアコン内部（熱交換器・ドレンパン）</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5"></i>洗濯槽の裏・パルセーターの黒カビ</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5"></i>レンジフードのシロッコファン内部</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5"></i>「市販でやったが改善しない」汚れ全般</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tip-box rounded-2xl p-5">
+                            <p class="font-bold text-brand-primary mb-1 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> まとめ</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">日常のフィルター掃除を自分でこまめに行い、年1〜2回プロの分解洗浄を組み合わせるのが最もコスパの高いやり方です。「プロに任せっぱなし」でも「自分でしかやらない」でも中途半端になりがちです。Laxuzでは、適切な頻度のアドバイスも行っています。LINEでお気軽にご相談ください。</p>
+                        </div>
+                    </article>
+
+                    <!-- CTA Section -->
+                    <div id="cta" class="reveal">
+                        <div class="bg-brand-primary rounded-[2rem] p-8 lg:p-12 text-center relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+                            <div class="relative z-10">
+                                <p class="text-brand-accent font-bold tracking-widest text-sm mb-3 flex justify-center items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i> まずは相談から
+                                </p>
+                                <h3 class="font-mincho text-2xl lg:text-3xl font-bold text-white mb-4">
+                                    気になることは<br>LINEで気軽に聞いてください
+                                </h3>
+                                <p class="text-teal-100 text-sm leading-relaxed mb-8 max-w-md mx-auto">
+                                    「どのメニューが必要か分からない」「料金が知りたい」<br>どんな小さな疑問でもお答えします。もちろん相談は無料です。
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談する
+                                    </a>
+                                    <a href="index.html#menu" class="bg-white/15 hover:bg-white/25 border border-white/30 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2">
+                                        <i data-lucide="clipboard-list" class="w-5 h-5"></i> 料金・メニューを見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- ページトップに戻るボタン -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-24 right-5 md:bottom-28 md:right-12 z-[99] bg-white border-2 border-brand-light text-brand-primary w-11 h-11 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Floating LINE -->
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+        <i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i>
+        <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            無料相談・ご予約
+        </span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-gray-300"><i data-lucide="leaf" class="w-4 h-4"></i></div>
+                    <span class="font-maru font-bold text-lg tracking-wider text-white">Laxuz</span>
+                </div>
+                <div class="text-xs space-x-4">
+                    <a href="index.html" class="hover:text-white transition">トップページ</a>
+                    <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-white transition">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+            <div class="text-center text-xs mt-8 text-gray-500 border-t border-gray-700 pt-6">
+                <p>&copy; 2023 Laxuz. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // ページトップボタン
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTop.classList.add('opacity-100');
+                } else {
+                    backToTop.classList.add('opacity-0', 'pointer-events-none');
+                    backToTop.classList.remove('opacity-100');
+                }
+            });
+
+            // Reveal on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // TOC active state on scroll
+            const sections = ['aircon','washing','rangehood','pro-vs-diy','cta'];
+            const tocLinks = {
+                'aircon': document.getElementById('toc-aircon'),
+                'washing': document.getElementById('toc-washing'),
+                'rangehood': document.getElementById('toc-rangehood'),
+                'pro-vs-diy': document.getElementById('toc-pro'),
+                'cta': document.getElementById('toc-cta'),
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    const id = e.target.id;
+                    if (tocLinks[id]) {
+                        if (e.isIntersecting) {
+                            Object.values(tocLinks).forEach(l => l && l.classList.remove('active'));
+                            tocLinks[id].classList.add('active');
+                        }
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) sectionObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

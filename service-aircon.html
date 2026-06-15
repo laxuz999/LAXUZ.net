@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エアコンクリーニング | Laxuz（ラクサス）大阪</title>
+    <meta name="description" content="大阪のエアコンクリーニング専門店Laxuz。壁掛け・お掃除機能付き・業務用など全機種対応。高圧洗浄機で内部のカビ・ほこりを根こそぎ除去。ビフォーアフター写真撮影付き。">
+    <meta property="og:title" content="エアコンクリーニング | Laxuz">
+    <meta property="og:description" content="内部のカビ・ほこりをプロが根こそぎ除去。大阪のエアコンクリーニング専門店Laxuz。">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://laxuz.jp/service-aircon.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { primary: '#0F766E', light: '#CCFBF1', accent: '#F59E0B', bg: '#FFFAED', line: '#06C755', lineHover: '#05B34C' }
+                    },
+                    fontFamily: {
+                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
+                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
+                        mincho: ['"Shippori Mincho"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); will-change: opacity,transform; -webkit-backface-visibility:hidden; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+        .soft-shadow { box-shadow: 0 8px 32px -8px rgba(15,118,110,0.10); }
+        .step-line::before { content:''; position:absolute; left:22px; top:48px; bottom:-16px; width:2px; background:#CCFBF1; }
+        .float-line-btn { bottom:1.25rem; right:1.25rem; }
+        @media(min-width:768px){ .float-line-btn { bottom:2.5rem; right:2.5rem; } }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                    <i data-lucide="leaf" class="w-6 h-6"></i>
+                </div>
+                <span class="font-maru font-bold text-xl text-gray-800 tracking-wider">Laxuz</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-5 text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-brand-primary font-medium transition flex items-center gap-1.5"><i data-lucide="home" class="w-4 h-4"></i> トップ</a>
+                <a href="index.html#reviews" class="text-gray-500 hover:text-brand-primary font-medium transition">実績・口コミ</a>
+                <a href="index.html#area" class="text-gray-500 hover:text-brand-primary font-medium transition">エリア</a>
+                <a href="index.html#booking" class="text-gray-500 hover:text-brand-primary font-medium transition">料金</a>
+                <a href="index.html#faq" class="text-gray-500 hover:text-brand-primary font-medium transition">FAQ</a>
+                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> LINE予約
+                </a>
+            </nav>
+            <button onclick="document.getElementById('sv-mobile-menu').classList.toggle('translate-x-full')" class="md:hidden text-gray-600 bg-brand-light p-2 rounded-full">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+        <div id="sv-mobile-menu" class="fixed inset-0 bg-brand-bg z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6 space-y-4" style="height:100vh;">
+            <button onclick="document.getElementById('sv-mobile-menu').classList.add('translate-x-full')" class="absolute top-6 right-6 text-gray-500 bg-white rounded-full p-2 shadow-sm"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <a href="index.html" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-brand-primary"></i>トップへ戻る</a>
+            <a href="index.html#reviews" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="star" class="w-5 h-5 text-brand-primary"></i>実績・口コミ</a>
+            <a href="index.html#area" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>訪問エリア</a>
+            <a href="index.html#booking" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</a>
+            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4"><i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約</a>
+        </div>
+    </header>
+
+    <div class="pt-20">
+        <!-- Hero -->
+        <section class="bg-brand-primary py-16 lg:py-24 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="wind" class="w-10 h-10 text-white"></i>
+                </div>
+                <p class="text-brand-accent font-bold tracking-widest text-sm mb-3">SERVICE</p>
+                <h1 class="font-mincho text-3xl lg:text-5xl font-bold text-white mb-4">エアコンクリーニング</h1>
+                <p class="text-teal-100 text-lg max-w-2xl mx-auto leading-relaxed">見えない内部のカビ・ほこりをプロが根こそぎ除去。<br>電気代の節約と空気質の改善を同時に実現します。</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/15 border border-white/20 text-white px-4 py-2 rounded-full">壁掛けタイプ対応</span>
+                    <span class="bg-white/15 border border-white/20 text-white px-4 py-2 rounded-full">お掃除機能付き対応</span>
+                    <span class="bg-white/15 border border-white/20 text-white px-4 py-2 rounded-full">業務用天カセ対応</span>
+                    <span class="bg-white/15 border border-white/20 text-white px-4 py-2 rounded-full">ビフォーアフター写真付き</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- なぜエアコン洗浄が必要か -->
+        <section class="py-16 bg-brand-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800">なぜ定期的な洗浄が必要なのか</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
+                    <div class="bg-white rounded-2xl p-6 text-center soft-shadow">
+                        <div class="text-3xl mb-3">🦠</div>
+                        <h3 class="font-bold text-gray-800 mb-2">カビの繁殖</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">エアコン内部は結露が発生しやすく、カビにとって絶好の環境。運転のたびにカビ胞子を部屋中に撒き散らしています。</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center soft-shadow">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h3 class="font-bold text-gray-800 mb-2">電気代の増加</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">熱交換器にほこりが詰まると効率が低下し、消費電力が最大25%増加することも。定期洗浄で節電効果が得られます。</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center soft-shadow">
+                        <div class="text-3xl mb-3">💧</div>
+                        <h3 class="font-bold text-gray-800 mb-2">水漏れ・異臭</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">ドレンパンに汚れが溜まると水漏れが発生。またカビが原因の酸っぱい臭いは洗浄しなければ解消しません。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作業内容 -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <p class="text-brand-primary font-bold tracking-widest text-sm mb-2">WORK FLOW</p>
+                    <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800">詳しい作業内容</h2>
+                    <p class="text-gray-500 mt-3 text-sm">丁寧な養生から完全乾燥まで、すべてのステップをご説明します。</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex gap-5 relative step-line reveal">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">1</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">事前確認・ビフォー撮影</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">エアコンの機種・状態を確認し、作業前の写真を撮影します。フィルターの汚れ具合、カビの状況などをお客様にご説明してから作業に入ります。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 relative step-line reveal delay-100">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">2</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">養生（ようじょう）</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">専用の洗浄カバーをエアコンに取り付け、壁・床・家具を汚水から守ります。洗浄水がこぼれないよう排水ホースをバケツへ誘導します。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 relative step-line reveal delay-200">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">3</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">フィルター取り外し・洗浄</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">フィルターを取り外し、専用洗剤でほこり・カビを洗い流します。目詰まりしているフィルターを清潔にすることで風量が回復します。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 relative step-line reveal">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">4</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">熱交換器（アルミフィン）の高圧洗浄</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">専用の高圧洗浄機を使い、熱交換器に詰まったほこり・カビを強力に洗い流します。市販スプレーでは届かない奥まで洗浄できるのがプロの強みです。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 relative step-line reveal delay-100">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">5</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">ファン・ドレンパンの洗浄</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">風を送るファン（クロスフローファン）の羽根についたカビや汚れ、排水受け皿（ドレンパン）の汚れを丁寧に洗い落とします。ここをきれいにすることで嫌なニオイが解消されます。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 relative step-line reveal delay-200">
+                        <div class="w-11 h-11 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">6</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">外装パネルの清掃</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">本体カバー・吹き出し口・ルーバーを丁寧に拭き上げます。ほこりや汚れをすっきり落として見た目も清潔に仕上げます。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 reveal">
+                        <div class="w-11 h-11 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 z-10">7</div>
+                        <div class="bg-brand-bg rounded-2xl p-5 flex-1">
+                            <h3 class="font-maru font-bold text-gray-800 mb-2">試運転・アフター撮影・ご確認</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">洗浄後に試運転を行い、正常に動作することを確認します。アフター写真を撮影してお客様にご覧いただき、作業完了となります。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- メニュー・料金カード -->
+                <div class="mt-16">
+                    <div class="text-center mb-10 reveal">
+                        <p class="text-brand-primary font-bold tracking-widest text-sm mb-2 flex justify-center items-center gap-2">
+                            <i data-lucide="clipboard-list" class="w-4 h-4"></i> PRICE & MENU
+                        </p>
+                        <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800">メニュー・料金一覧</h2>
+                        <p class="text-gray-500 text-sm mt-2">※ 表示価格は税抜きです</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+
+                        <!-- ノーマルエアコン -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/nomaru_eakon.png" alt="ノーマルエアコン" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">NORMAL</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">ノーマルエアコン</h3>
+                                <p class="text-gray-500 text-xs mb-3">壁掛け・標準タイプ</p>
+                                <div class="flex items-end gap-1 mb-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-normal" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                                <p id="sv-price-normal-multi" class="text-xs text-gray-400"></p>
+                            </div>
+                        </div>
+
+                        <!-- お掃除機能エアコン -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/osouji_kino_eakon.png" alt="お掃除機能エアコン" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">AUTO CLEAN</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">お掃除機能エアコン</h3>
+                                <p class="text-gray-500 text-xs mb-3">自動洗浄機能付き</p>
+                                <div class="flex items-end gap-1 mb-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-clean" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                                <p id="sv-price-clean-multi" class="text-xs text-gray-400"></p>
+                            </div>
+                        </div>
+
+                        <!-- 高性能エアコン -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow sm:col-span-2 lg:col-span-3">
+                            <div class="p-5 border-b border-brand-light flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">HIGH SPEC</p>
+                                    <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">高性能エアコン</h3>
+                                    <p class="text-gray-600 text-xs leading-relaxed">分解難易度が高く、作業に時間のかかる機種を高性能エアコンとしています。構造が複雑なため、一般的な壁掛けエアコンより丁寧な分解・洗浄が必要です。該当する機種は下記よりご確認ください。</p>
+                                </div>
+                                <div class="text-right flex-shrink-0 ml-4">
+                                    <div class="flex items-end gap-1 justify-end mb-1">
+                                        <span class="text-gray-400 text-xs">1台</span>
+                                        <span id="sv-price-high" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                        <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                    </div>
+                                    <p id="sv-price-high-multi" class="text-xs text-gray-400"></p>
+                                </div>
+                            </div>
+
+                            <!-- メーカータブ -->
+                            <div class="p-5">
+                                <div id="maker-tabs" class="flex flex-wrap gap-2 mb-4">
+                                    <div class="text-xs text-gray-400 animate-pulse">機種情報を読み込み中...</div>
+                                </div>
+                                <div id="maker-content" class="bg-brand-bg rounded-xl p-4 min-h-16">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 室外機 -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/shitsugaiki.png" alt="室外機" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">OUTDOOR UNIT</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">室外機クリーニング</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">室外機のフィン（放熱板）にほこりや汚れが詰まると、熱交換の効率が落ちて冷暖房の効きが悪くなり、電気代が上がる原因になります。また、内部にカビや異物が入り込むとモーターの寿命を縮めることも。定期的な洗浄で効率を維持し、故障リスクを下げましょう。</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-shitsugaiki" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 防カビ -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/bokabi.png" alt="防カビ" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">ANTI-MOLD</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">防カビコーティング</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">エアコン内部は湿気がこもりやすく、クリーニング直後でもカビが再発しやすい環境です。防カビコーティングを施すことで、カビの再付着を抑制し、清潔な状態をより長く保てます。小さなお子様やアレルギーをお持ちの方のいるご家庭に特におすすめです。</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-bokabi" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ドレンホース -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/doren_hosu.png" alt="ドレンホース" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">DRAIN HOSE</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">ドレンホース洗浄</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">ドレンホースはエアコンの結露水を外へ排出する排水管です。汚れやカビ、虫の侵入などで詰まると、室内への水漏れの原因になります。また詰まりが悪化すると本体の電気系統に影響し、故障につながることも。定期的な洗浄で水漏れトラブルを未然に防ぎましょう。</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-doren" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 改行：Aセット・Bセット行 -->
+                        <div class="col-span-1 sm:col-span-2 lg:col-span-3 border-t border-amber-200 pt-2 mt-2">
+                            <p class="text-xs font-bold text-amber-600 tracking-widest">SET OPTIONS</p>
+                        </div>
+
+                        <!-- Aセット -->
+                        <div class="bg-amber-50 border border-amber-200 rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#fef3c7;">
+                                <img src="/netimg/A_setto.png" alt="Aセット" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-amber-600 tracking-widest mb-1">SET OPTION</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">Aセット</h3>
+                                <p class="text-gray-500 text-xs mb-3">室外機＋防カビ＋ドレンホース</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-500 text-xs">追加</span>
+                                    <span id="sv-price-aset" class="text-2xl font-maru font-bold text-amber-600 ml-1"><span class="inline-block w-16 h-7 bg-amber-100 rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bセット -->
+                        <div class="bg-amber-50 border border-amber-200 rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#fef3c7;">
+                                <img src="/netimg/B_setto.png" alt="Bセット" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-amber-600 tracking-widest mb-1">SET OPTION</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">Bセット</h3>
+                                <p class="text-gray-500 text-xs mb-3">室外機＋ドレンホース</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-500 text-xs">追加</span>
+                                    <span id="sv-price-bset" class="text-2xl font-maru font-bold text-amber-600 ml-1"><span class="inline-block w-16 h-7 bg-amber-100 rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 改行：業務用行 -->
+                        <div class="col-span-1 sm:col-span-2 lg:col-span-3 border-t border-brand-light pt-2 mt-2">
+                            <p class="text-xs font-bold text-brand-primary tracking-widest">COMMERCIAL MENU</p>
+                        </div>
+
+                        <!-- 業務用天カセ -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/GyomuyoTenkase.png" alt="業務用天カセ" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">COMMERCIAL</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">業務用天カセ</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">天井カセット型業務用エアコンを完全分解して洗浄します。シロッコファン・アルミフィン（熱交換器）・外装パネル・フィルターを取り外し、高圧洗浄と専用洗剤で内部に蓄積したカビ・ほこり・油汚れを根こそぎ除去。業務用は家庭用より大型で汚れが溜まりやすく、放置すると冷暖房効率の低下や異臭の原因になります。</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-tenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 簡易業務用天カセ -->
+                        <div class="bg-white border border-brand-light rounded-2xl overflow-hidden soft-shadow">
+                            <div style="height:160px;overflow:hidden;background:#e2e8f0;">
+                                <img src="/netimg/KaniGyomuyoTenkase.png" alt="簡易業務用天カセ" style="width:100%;height:160px;object-fit:cover;display:block;">
+                            </div>
+                            <div class="p-5">
+                                <p class="text-xs font-bold text-brand-primary tracking-widest mb-1">COMMERCIAL LIGHT</p>
+                                <h3 class="font-maru font-bold text-gray-800 text-lg mb-1">簡易業務用天カセ</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">外装パネルとフィルターを中心とした簡易クリーニングです。分解洗浄ほど大がかりではなく、定期的なメンテナンスとして取り入れやすいプランです。フィルターの目詰まりを解消することで風量・換気効率を回復し、電気代の節約にもつながります。</p>
+                                <div class="flex items-end gap-1">
+                                    <span class="text-gray-400 text-xs">1台</span>
+                                    <span id="sv-price-kantenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span class="text-gray-500 text-xs mb-0.5">円</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訪問前の準備 -->
+        <section class="py-16 bg-brand-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <p class="text-brand-accent font-bold tracking-widest text-sm mb-2 flex justify-center items-center gap-2">
+                        <i data-lucide="clipboard-check" class="w-4 h-4"></i> BEFORE VISIT
+                    </p>
+                    <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-gray-800">訪問前にお客様へお願いしたいこと</h2>
+                    <p class="text-gray-500 text-sm mt-3">事前にご準備いただくと、作業がスムーズに進みます。</p>
+                </div>
+
+                <div class="space-y-6">
+
+                    <!-- 1. エアコン周辺の片付け -->
+                    <div class="bg-white rounded-2xl p-6 soft-shadow reveal">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <h3 class="font-maru font-bold text-gray-800 text-lg">エアコン周辺の片付け</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="armchair" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">エアコン直下のスペース確保</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">脚立を立てて作業するため、エアコン直下（1〜2畳程度）にソファー・ベッド・家具がある場合は、可能な範囲で移動をお願いします。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i data-lucide="image" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">壁周辺の小物・カーテンの移動</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">壁のポスター・棚の小物・カーテンなどは、洗浄水で濡れたり汚れたりする場合があります。作業前に取り外して別の場所へ移動させてください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 bg-brand-light/30 rounded-xl p-3">
+                                <i data-lucide="info" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <p class="text-sm text-gray-600 leading-relaxed">テレビや大きなタンスなど移動が難しいものはそのままで大丈夫です。専用の養生（ビニールカバー）でしっかり保護して作業します。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 水場・電気の確認 -->
+                    <div class="bg-white rounded-2xl p-6 soft-shadow reveal delay-100">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <h3 class="font-maru font-bold text-gray-800 text-lg">水場・電気のご確認</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="bath" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">お風呂場またはベランダのご用意</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">エアコンのカバーやパーツを洗浄するため、お風呂場の床またはベランダを使用します。洗濯物などを片付けて、すぐに水が使える状態にしておいてください。お湯が使える場合は汚れ落ちがより良くなります。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i data-lucide="zap" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">コンセント（電源）の確保</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">高圧洗浄機を使用するため、作業場所の近くにコンセントが必要です。延長コードもご用意していますが、電源の場所を事前にご確認ください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i data-lucide="droplets" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">排水について（集合住宅の場合）</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">集合住宅の場合、洗浄で出た汚水はトイレに流させていただきます。あらかじめご了承ください。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. その他 -->
+                    <div class="bg-white rounded-2xl p-6 soft-shadow reveal delay-200">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <h3 class="font-maru font-bold text-gray-800 text-lg">その他、事前にしておくこと</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="play-circle" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">事前の試運転</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">当日、作業員と一緒に動作（冷暖房・異音の有無）を確認しますが、事前にご自身で試運転をしておいていただけるとよりスムーズです。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i data-lucide="car" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">駐車場のご確認</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">自宅に駐車スペースがない場合は、お客様負担にて近隣のコインパーキングをご利用いただきます。あらかじめご了承ください。</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i data-lucide="shield" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-sm mb-1">貴重品・壊れやすいものの移動</p>
+                                    <p class="text-sm text-gray-600 leading-relaxed">念のため、エアコン周辺の壊れやすいものや貴重品は、作業前に別の場所へ移動させておくと安心です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- LINEで事前相談 -->
+                <div class="mt-8 bg-brand-primary rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 reveal">
+                    <i data-lucide="calendar" class="w-8 h-8 text-white flex-shrink-0"></i>
+                    <p class="text-sm text-white leading-relaxed flex-1">ご準備が整いましたら、そのままご予約へお進みください。LINEまたは予約フォームからご予約いただけます。</p>
+                    <a href="index.html#booking" class="bg-white text-brand-primary hover:bg-brand-light text-sm font-bold px-5 py-2.5 rounded-full flex-shrink-0 transition flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> ご予約はこちら
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="py-16 bg-brand-primary relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:24px 24px;"></div>
+            <div class="max-w-2xl mx-auto px-4 text-center relative z-10 reveal">
+                <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-white mb-4">エアコンのニオイや汚れが気になったら</h2>
+                <p class="text-teal-100 text-sm mb-8 leading-relaxed">まずはLINEでお気軽にご相談ください。<br>写真を送っていただければ、より正確なお見積りが可能です。</p>
+                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-10 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談する
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-24 right-5 md:bottom-28 md:right-12 z-[99] bg-white border-2 border-brand-light text-brand-primary w-11 h-11 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+        <i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i>
+        <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">無料相談・ご予約</span>
+    </a>
+
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center"><i data-lucide="leaf" class="w-4 h-4"></i></div>
+                <span class="font-maru font-bold text-lg text-white">Laxuz</span>
+            </div>
+            <div class="flex gap-4 text-xs">
+                <a href="index.html" class="hover:text-white transition">トップページ</a>
+                <a href="service-washing.html" class="hover:text-white transition">洗濯機</a>
+                <a href="service-rangehood.html" class="hover:text-white transition">レンジフード</a>
+                <a href="service-bathroom.html" class="hover:text-white transition">浴室</a>
+            </div>
+            <p class="text-xs text-gray-500">&copy; 2025 Laxuz. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 高性能エアコン機種一覧をスプレッドシートから取得
+        const MAKER_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQT5QxwptTy73a34UtLRlXGbUJ3BQ4Ero1caVWmpfMgJJN3b8tnGNxKEgrJa8AmP4piQoMlzlv98Yr/pub?gid=1082341795&single=true&output=csv';
+
+        async function fetchMakerList() {
+            try {
+                const res = await fetch(MAKER_SHEET_URL);
+                if (!res.ok) throw new Error('fetch failed');
+                const csv = await res.text();
+                const lines = csv.split('\n').filter(l => l.trim());
+
+                // 1行目はヘッダー（メーカー,シリーズ名,該当機種・型番）なのでスキップ
+                const makers = [];
+                lines.slice(1).forEach(line => {
+                    const cols = parseCSVLine(line);
+                    const maker = (cols[0] || '').replace(/"/g, '').trim();
+                    const series = (cols[1] || '').replace(/"/g, '').trim();
+                    const models = (cols[2] || '').replace(/"/g, '').trim();
+                    if (maker) makers.push({ maker, series, models });
+                });
+
+                if (makers.length === 0) throw new Error('no data');
+
+                // タブ生成
+                const tabsEl = document.getElementById('maker-tabs');
+                const contentEl = document.getElementById('maker-content');
+                tabsEl.innerHTML = '';
+
+                makers.forEach((item, idx) => {
+                    const btn = document.createElement('button');
+                    btn.textContent = item.maker;
+                    btn.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 ' +
+                        (idx === 0
+                            ? 'bg-brand-primary text-white border-brand-primary'
+                            : 'bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary');
+                    btn.addEventListener('click', () => {
+                        // アクティブタブ切り替え
+                        tabsEl.querySelectorAll('button').forEach(b => {
+                            b.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary';
+                        });
+                        btn.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-brand-primary text-white border-brand-primary';
+                        // コンテンツ更新
+                        showMakerContent(item, contentEl);
+                    });
+                    tabsEl.appendChild(btn);
+                });
+
+                // 最初のタブを表示
+                showMakerContent(makers[0], contentEl);
+
+            } catch (e) {
+                const tabsEl = document.getElementById('maker-tabs');
+                if (tabsEl) tabsEl.innerHTML = '<p class="text-xs text-gray-400">機種情報の取得に失敗しました。LINEでお問い合わせください。</p>';
+                console.warn('機種一覧取得失敗:', e);
+            }
+        }
+
+        function showMakerContent(item, el) {
+            el.innerHTML = `
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="flex-shrink-0">
+                        <span class="inline-block bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full">${item.maker}</span>
+                        ${item.series ? `<span class="inline-block bg-white text-brand-primary text-xs font-bold px-3 py-1 rounded-full border border-brand-light ml-2">${item.series}</span>` : ''}
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-700 leading-relaxed">${item.models || '詳細はお問い合わせください'}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        fetchMakerList();
+
+        // スプレッドシートから料金取得
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZIUSA1wXtK30TkiLLcX_93kgbux6ikmXRNXqGrlRpbpDlp_GFK-96xvCQkeOeVBKY4Fv_aXo9YOYF/pub?output=csv';
+
+        function fmt(v) { return Number(v).toLocaleString('ja-JP'); }
+        function setP(id, val) { const el = document.getElementById(id); if(el) el.textContent = fmt(val); }
+
+        function parseCSVLine(line) {
+            const cols = []; let cur = ''; let inQ = false;
+            for(let i=0;i<line.length;i++){
+                const ch=line[i];
+                if(ch==='"'){inQ=!inQ;}
+                else if(ch===','&&!inQ){cols.push(cur.trim());cur='';}
+                else{cur+=ch;}
+            }
+            cols.push(cur.trim()); return cols;
+        }
+
+        async function fetchPrices() {
+            try {
+                const res = await fetch(SHEET_URL);
+                if(!res.ok) throw new Error('fetch failed');
+                const csv = await res.text();
+                const prices = {};
+                csv.split('\n').forEach(line => {
+                    if(!line.trim()) return;
+                    const cols = parseCSVLine(line);
+                    const name = (cols[1]||'').replace(/"/g,'').trim();
+                    const p1 = parseFloat((cols[2]||'').replace(/[^0-9.]/g,''));
+                    const p2 = parseFloat((cols[3]||'').replace(/[^0-9.]/g,''));
+                    const p3 = parseFloat((cols[4]||'').replace(/[^0-9.]/g,''));
+                    if(name && !isNaN(p1) && p1>0) prices[name] = {p1, p2, p3};
+                });
+
+                if(prices['ノーマルエアコン']) {
+                    const d = prices['ノーマルエアコン'];
+                    setP('sv-price-normal', d.p1);
+                    const el = document.getElementById('sv-price-normal-multi');
+                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
+                }
+                if(prices['お掃除機能エアコン']) {
+                    const d = prices['お掃除機能エアコン'];
+                    setP('sv-price-clean', d.p1);
+                    const el = document.getElementById('sv-price-clean-multi');
+                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
+                }
+                if(prices['高性能エアコン']) {
+                    const d = prices['高性能エアコン'];
+                    setP('sv-price-high', d.p1);
+                    const el = document.getElementById('sv-price-high-multi');
+                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
+                }
+                if(prices['Aセット'])    setP('sv-price-aset', prices['Aセット'].p1);
+                if(prices['Bセット'])    setP('sv-price-bset', prices['Bセット'].p1);
+                if(prices['室外機'])     setP('sv-price-shitsugaiki', prices['室外機'].p1);
+                if(prices['防カビ'])     setP('sv-price-bokabi', prices['防カビ'].p1);
+                if(prices['ドレンホース']) setP('sv-price-doren', prices['ドレンホース'].p1);
+                if(prices['業務用天カセ']) setP('sv-price-tenkase', prices['業務用天カセ'].p1);
+                if(prices['簡易業務用天カセ']) setP('sv-price-kantenkase', prices['簡易業務用天カセ'].p1);
+
+            } catch(e) {
+                console.warn('料金取得失敗:', e);
+            }
+        }
+        fetchPrices();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) { backToTop.classList.remove('opacity-0','pointer-events-none'); backToTop.classList.add('opacity-100'); }
+                else { backToTop.classList.add('opacity-0','pointer-events-none'); backToTop.classList.remove('opacity-100'); }
+            });
+            const els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('active')); return; }
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
+            }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+            els.forEach(el => obs.observe(el));
+        });
+    </script>
+</body>
+</html>
