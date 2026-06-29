@@ -2,6 +2,9 @@
 .DS_Store
 **/.DS_Store
 
+# Node (ローカル開発用・サーバー不要)
+node_modules/
+
 # Backup archive (not needed on server)
 files.zip
 files/

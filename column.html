@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Laxuz v1.2 ｜ 最終更新 2026/06/29 14:06 -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -22,135 +23,32 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="common.js?v=20260629"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#0F766E',
-                            light: '#CCFBF1',
-                            accent: '#F59E0B',
-                            bg: '#FFFAED',
-                            line: '#06C755',
-                            lineHover: '#05B34C',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
-                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
-                        mincho: ['"Shippori Mincho"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
 
+    <link rel="stylesheet" href="common.css?v=20260629">
     <style>
-        html { scroll-behavior: smooth; }
         section { scroll-margin-top: 100px; }
-
-        .soft-shadow { box-shadow: 0 8px 32px -8px rgba(15,118,110,0.10); }
-
-        /* Reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
-
-        /* Article card */
-        .article-card {
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
-        .article-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 56px -12px rgba(15,118,110,0.16);
-        }
-
-        /* TOC active */
+        .article-card { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+        .article-card:hover { transform: translateY(-6px); box-shadow: 0 24px 56px -12px rgba(15,118,110,0.16); }
         .toc-link { transition: all 0.2s; border-left: 3px solid transparent; padding-left: 12px; }
         .toc-link.active { border-color: #0F766E; color: #0F766E; font-weight: 700; }
         .toc-link:hover { color: #0F766E; border-color: #CCFBF1; }
-
-        /* Tip box */
-        .tip-box {
-            background: linear-gradient(135deg, #f0fdf9 0%, #FFFAED 100%);
-            border-left: 4px solid #0F766E;
-        }
-
-        /* Danger box */
-        .danger-box {
-            background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
-            border-left: 4px solid #F59E0B;
-        }
-
-        /* Comparison table */
+        .tip-box { background: linear-gradient(135deg, #f0fdf9 0%, #FFFAED 100%); border-left: 4px solid #0F766E; }
+        .danger-box { background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border-left: 4px solid #F59E0B; }
         .compare-table th { background: #0F766E; color: white; }
         .compare-table td { border-bottom: 1px solid #e2e8f0; }
         .compare-table tr:last-child td { border-bottom: none; }
         .compare-table tr:nth-child(even) td { background: #f8fafc; }
-
-        /* Progress bar */
-        .progress-bar {
-            height: 8px;
-            border-radius: 99px;
-            background: #e2e8f0;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            border-radius: 99px;
-            background: linear-gradient(90deg, #0F766E, #14b8a6);
-            transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
-        }
-
-        /* Sticky TOC */
-        @media (min-width: 1024px) {
-            .toc-sticky { position: sticky; top: 110px; }
-        }
-
-        /* Chapter badge */
-        .chapter-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #0F766E;
-            color: white;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            padding: 4px 14px;
-            border-radius: 99px;
-        }
-
-        /* Icon circle */
-        .icon-circle {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        /* LINE pulse */
-        @keyframes line-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(6,199,85,0.4); }
-            50% { box-shadow: 0 0 0 10px rgba(6,199,85,0); }
-        }
+        .progress-bar { height: 8px; border-radius: 99px; background: #e2e8f0; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #0F766E, #14b8a6); transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
+        @media (min-width: 1024px) { .toc-sticky { position: sticky; top: 110px; } }
+        .chapter-badge { display: inline-flex; align-items: center; gap: 6px; background: #0F766E; color: white; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 14px; border-radius: 99px; }
+        .icon-circle { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        @keyframes line-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(6,199,85,0.4); } 50% { box-shadow: 0 0 0 10px rgba(6,199,85,0); } }
         .line-pulse { animation: line-pulse 2.5s ease-in-out infinite; }
-
-        /* Floating btn */
-        .float-line-btn { bottom: 1.25rem; right: 1.25rem; }
-        @media(min-width:768px){ .float-line-btn { bottom: 2.5rem; right: 2.5rem; } }
     </style>
 
     <script type="application/ld+json">
@@ -184,8 +82,8 @@
                 <a href="index.html#area" class="text-gray-500 hover:text-brand-primary font-medium transition">エリア</a>
                 <a href="index.html#menu" class="text-gray-500 hover:text-brand-primary font-medium transition">料金</a>
                 <a href="index.html#faq" class="text-gray-500 hover:text-brand-primary font-medium transition">FAQ</a>
-                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i> LINE予約
+                <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2" onclick="openQaBot();return false;">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> チャット予約
                 </a>
             </nav>
             <!-- モバイルメニューボタン -->
@@ -204,8 +102,8 @@
             <a href="index.html#area" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>訪問エリア</a>
             <a href="index.html#menu" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</a>
             <a href="index.html#faq" onclick="document.getElementById('col-mobile-menu').classList.add('translate-x-full')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="help-circle" class="w-5 h-5 text-brand-primary"></i>よくある質問</a>
-            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4">
-                <i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約
+            <a href="javascript:void(0)" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4" onclick="openQaBot();return false;">
+                <i data-lucide="message-circle" class="w-6 h-6"></i> チャットで簡単予約
             </a>
         </div>
     </header>
@@ -262,8 +160,8 @@
                             <a href="#cta" class="toc-link block py-1 text-gray-600" id="toc-cta">プロに依頼する</a>
                         </nav>
                         <div class="mt-6 pt-6 border-t border-brand-light">
-                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-white text-sm font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-brand-lineHover transition line-pulse">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i> LINEで無料相談
+                            <a href="javascript:void(0)" class="bg-brand-line text-white text-sm font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-brand-lineHover transition line-pulse" onclick="openQaBot();return false;">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> チャットで無料相談
                             </a>
                         </div>
                     </div>
@@ -623,8 +521,8 @@
                                     「どのメニューが必要か分からない」「料金が知りたい」<br>どんな小さな疑問でもお答えします。もちろん相談は無料です。
                                 </p>
                                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                                        <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談する
+                                    <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2" onclick="openQaBot();return false;">
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i> チャットで無料相談する
                                     </a>
                                     <a href="index.html#menu" class="bg-white/15 hover:bg-white/25 border border-white/30 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2">
                                         <i data-lucide="clipboard-list" class="w-5 h-5"></i> 料金・メニューを見る
@@ -645,7 +543,7 @@
     </button>
 
     <!-- Floating LINE -->
-    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group" style="display:none">
         <i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i>
         <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             無料相談・ご予約
@@ -688,11 +586,21 @@
                 }
             });
 
-            // Reveal on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-            }, { threshold: 0.08 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            // Reveal on scroll（iOS対応）
+            const revealEls = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(el => el.classList.add('active'));
+            } else {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('active');
+                            observer.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+                revealEls.forEach(el => observer.observe(el));
+            }
 
             // TOC active state on scroll
             const sections = ['aircon','washing','rangehood','pro-vs-diy','cta'];

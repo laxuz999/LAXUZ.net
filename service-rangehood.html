@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Laxuz v1.2 ｜ 最終更新 2026/06/29 14:06 -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -12,28 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="common.js?v=20260629"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { brand: { primary: '#0F766E', light: '#CCFBF1', accent: '#F59E0B', bg: '#FFFAED', line: '#06C755', lineHover: '#05B34C' } },
-                    fontFamily: { sans: ['"M PLUS Rounded 1c"', 'sans-serif'], maru: ['"Zen Maru Gothic"', 'sans-serif'], mincho: ['"Shippori Mincho"', 'serif'] }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1); will-change:opacity,transform; -webkit-backface-visibility:hidden; }
-        .reveal.active { opacity:1; transform:translateY(0); }
-        .delay-100 { transition-delay:100ms; } .delay-200 { transition-delay:200ms; }
-        @media (prefers-reduced-motion:reduce) { .reveal { opacity:1; transform:none; transition:none; } }
-        .soft-shadow { box-shadow:0 8px 32px -8px rgba(15,118,110,0.10); }
-        .step-line::before { content:''; position:absolute; left:22px; top:48px; bottom:-16px; width:2px; background:#CCFBF1; }
-        .float-line-btn { bottom:1.25rem; right:1.25rem; }
-        @media(min-width:768px){ .float-line-btn { bottom:2.5rem; right:2.5rem; } }
-    </style>
+    <link rel="stylesheet" href="common.css?v=20260629">
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white">
 
@@ -48,7 +30,7 @@
                 <a href="index.html#reviews" class="text-gray-500 hover:text-brand-primary font-medium transition">実績・口コミ</a>
                 <a href="index.html#area" class="text-gray-500 hover:text-brand-primary font-medium transition">エリア</a>
                 <a href="index.html#booking" class="text-gray-500 hover:text-brand-primary font-medium transition">料金</a>
-                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> LINE予約</a>
+                <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2" onclick="openQaBot();return false;"><i data-lucide="message-circle" class="w-4 h-4"></i> チャット予約</a>
             </nav>
             <button onclick="document.getElementById('sv-mobile-menu').classList.toggle('translate-x-full')" class="md:hidden text-gray-600 bg-brand-light p-2 rounded-full"><i data-lucide="menu" class="w-5 h-5"></i></button>
         </div>
@@ -56,7 +38,7 @@
             <button onclick="document.getElementById('sv-mobile-menu').classList.add('translate-x-full')" class="absolute top-6 right-6 text-gray-500 bg-white rounded-full p-2 shadow-sm"><i data-lucide="x" class="w-6 h-6"></i></button>
             <a href="index.html" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-brand-primary"></i>トップへ戻る</a>
             <a href="index.html#booking" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</a>
-            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4"><i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約</a>
+            <a href="javascript:void(0)" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4" onclick="openQaBot();return false;"><i data-lucide="message-circle" class="w-6 h-6"></i> チャットで簡単予約</a>
         </div>
     </header>
 
@@ -248,7 +230,7 @@
                             <p class="text-gray-600 text-xs leading-relaxed mb-3">シロッコファン・整流板・フィルターを完全分解して油汚れを徹底除去。換気効率を回復させ、火災リスクの低減にもつながります。</p>
                             <div class="flex items-end gap-1">
                                 <span class="text-gray-400 text-xs">1台</span>
-                                <span id="r-price-rangehood" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                <span id="r-price-rangehood" class="text-2xl font-maru font-bold text-brand-primary ml-1">15,000</span>
                                 <span class="text-gray-500 text-xs mb-0.5">円</span>
                             </div>
                         </div>
@@ -265,7 +247,7 @@
                             <p class="text-gray-600 text-xs leading-relaxed mb-3">壁付きのプロペラ式換気扇のクリーニングです。機種や汚れの状態によって料金が異なりますので、まずはLINEでご相談ください。</p>
                             <div class="flex items-end gap-1">
                                 <span class="text-gray-400 text-xs">1台</span>
-                                <span id="r-price-puropera" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                <span id="r-price-puropera" class="text-2xl font-maru font-bold text-brand-primary ml-1">10,000</span>
                                 <span class="text-gray-500 text-xs mb-0.5">円</span>
                             </div>
                         </div>
@@ -280,15 +262,15 @@
             <div class="max-w-2xl mx-auto px-4 text-center relative z-10 reveal">
                 <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-white mb-4">油汚れやベタつきが気になったら</h2>
                 <p class="text-teal-100 text-sm mb-8 leading-relaxed">「換気扇の音が大きくなった」「油のベタつきが気になる」<br>そんな方はLINEでお気軽にご相談ください。</p>
-                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-10 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談する
+                <a href="javascript:void(0)" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-10 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1" onclick="openQaBot();return false;">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> チャットで無料相談する
                 </a>
             </div>
         </section>
     </div>
 
     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-24 right-5 md:bottom-28 md:right-12 z-[99] bg-white border-2 border-brand-light text-brand-primary w-11 h-11 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
-    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group"><i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i></a>
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group" style="display:none"><i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i></a>
 
     <footer class="bg-gray-800 text-gray-300 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -304,51 +286,13 @@
     </footer>
 
     <script>
-        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZIUSA1wXtK30TkiLLcX_93kgbux6ikmXRNXqGrlRpbpDlp_GFK-96xvCQkeOeVBKY4Fv_aXo9YOYF/pub?output=csv';
-        function fmt(v) { return Number(v).toLocaleString('ja-JP'); }
-        function setP(id, val) { const el = document.getElementById(id); if(el) el.textContent = fmt(val); }
-        function parseCSVLine(line) {
-            const cols = []; let cur = ''; let inQ = false;
-            for(let i=0;i<line.length;i++){
-                const ch=line[i];
-                if(ch==='"'){inQ=!inQ;}
-                else if(ch===','&&!inQ){cols.push(cur.trim());cur='';}
-                else{cur+=ch;}
-            }
-            cols.push(cur.trim()); return cols;
-        }
-        async function fetchPrices() {
+        (async () => {
             try {
-                const res = await fetch(SHEET_URL);
-                if(!res.ok) throw new Error('fetch failed');
-                const csv = await res.text();
-                const prices = {};
-                csv.split('\n').forEach(line => {
-                    if(!line.trim()) return;
-                    const cols = parseCSVLine(line);
-                    const name = (cols[1]||'').replace(/"/g,'').trim();
-                    const p1 = parseFloat((cols[2]||'').replace(/[^0-9.]/g,''));
-                    if(name && !isNaN(p1) && p1>0) prices[name] = p1;
-                });
-                if(prices['レンジフード']) setP('r-price-rangehood', prices['レンジフード']);
-                if(prices['プロペラ式換気扇']) setP('r-price-puropera', prices['プロペラ式換気扇']);
+                const prices = await laxuzFetchPrices();
+                if(prices['レンジフード']) laxuzSetPrice('r-price-rangehood', prices['レンジフード'].p1);
+                if(prices['プロペラ式換気扇']) laxuzSetPrice('r-price-puropera', prices['プロペラ式換気扇'].p1);
             } catch(e) { console.warn('料金取得失敗:', e); }
-        }
-        fetchPrices();
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            const backToTop = document.getElementById('back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) { backToTop.classList.remove('opacity-0','pointer-events-none'); backToTop.classList.add('opacity-100'); }
-                else { backToTop.classList.add('opacity-0','pointer-events-none'); backToTop.classList.remove('opacity-100'); }
-            });
-            const els = document.querySelectorAll('.reveal');
-            if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('active')); return; }
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
-            }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-            els.forEach(el => obs.observe(el));
-        });
+        })();
     </script>
 </body>
 </html>

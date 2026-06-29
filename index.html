@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Laxuz v1.2 ｜ 最終更新 2026/06/29 14:06 -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -36,84 +37,25 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="common.js?v=20260629"></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#0F766E',
-                            light: '#CCFBF1',
-                            accent: '#F59E0B',
-                            accentHover: '#D97706',
-                            text: '#475569',
-                            bg: '#FFFAED',
-                            line: '#06C755',
-                            lineHover: '#05B34C',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
-                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
-                        kiwi: ['"Kiwi Maru"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
 
+    <link rel="stylesheet" href="common.css?v=20260629">
     <style>
-        html { scroll-behavior: smooth; }
         section { scroll-margin-top: 100px; }
-        .soft-shadow { box-shadow: 0 10px 40px -10px rgba(15, 118, 110, 0.08); }
-        .marker-line {
-            background: linear-gradient(transparent 60%, #CCFBF1 60%);
-            display: inline;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
+        .marker-line { background: linear-gradient(transparent 60%, #CCFBF1 60%); display: inline; }
         .delay-300 { transition-delay: 300ms; }
-
-        /* iOSでアニメーション無効設定の場合は即表示 */
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-        }
-
-        /* Star rating */
         .stars { color: #F59E0B; letter-spacing: 2px; }
-
-        /* Review card hover */
         .review-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .review-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px -10px rgba(15, 118, 110, 0.15); }
-
-        /* Trust badge pulse */
-        @keyframes badge-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(6, 199, 85, 0); }
-        }
+        @keyframes badge-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(6, 199, 85, 0); } }
         .badge-pulse { animation: badge-pulse 2.5s ease-in-out infinite; }
-
-        /* FAQ smooth open */
         details > div { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Floating LINE button - smaller on mobile */
-        .float-line-btn { bottom: 1.25rem; right: 1.25rem; }
-        @media (min-width: 768px) { .float-line-btn { bottom: 2.5rem; right: 2.5rem; } }
     </style>
 
     <!-- Structured Data (JSON-LD) -->
@@ -163,6 +105,9 @@
                 <a href="column.html" class="text-gray-600 hover:text-brand-primary font-medium transition flex items-center gap-1.5">
                     <i data-lucide="book-open" class="w-4 h-4"></i> コラム
                 </a>
+                <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 lg:px-6 py-2.5 rounded-full font-bold shadow-md transition transform hover:-translate-y-0.5 flex items-center gap-2" onclick="openQaBot();return false;">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> 相談
+                </a>
             </nav>
             <div class="md:hidden flex items-center z-20">
                 <button onclick="window.toggleMenu()" class="text-gray-600 hover:text-brand-primary focus:outline-none p-2 bg-brand-light rounded-full">
@@ -181,8 +126,8 @@
             <button onclick="window.scrollToSection('faq')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="help-circle" class="w-5 h-5 text-brand-primary"></i>よくある質問</button>
             <button onclick="window.scrollToSection('menu')" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</button>
             <a href="column.html" onclick="window.toggleMenu()" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 text-left w-full flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-brand-primary"></i>お掃除コラム</a>
-            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4">
-                <i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約
+            <a href="javascript:void(0)" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4" onclick="openQaBot();return false;">
+                <i data-lucide="message-circle" class="w-6 h-6"></i> チャットで簡単予約
             </a>
         </div>
     </header>
@@ -225,8 +170,8 @@
                             <button onclick="window.scrollToSection('menu')" class="bg-brand-primary hover:bg-teal-800 text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
                                 <i data-lucide="clipboard-list" class="w-5 h-5"></i> 料金・メニューを見る
                             </button>
-                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white soft-shadow px-8 py-4 rounded-full font-bold transition text-center flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談
+                            <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white soft-shadow px-8 py-4 rounded-full font-bold transition text-center flex items-center justify-center gap-2 transform hover:-translate-y-1" onclick="openQaBot();return false;">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i> チャットで無料相談
                             </a>
                         </div>
                     </div>
@@ -800,8 +745,8 @@
                                 <p class="font-bold text-gray-800 text-sm">エリア外のお客様もご相談ください</p>
                                 <p class="text-xs text-gray-500 mt-0.5">記載エリア外でもお伺いできる場合があります。まずはLINEでお気軽にご相談ください。</p>
                             </div>
-                            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full flex-shrink-0 transition">
-                                LINEで相談
+                            <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full flex-shrink-0 transition" onclick="openQaBot();return false;">
+                                チャットで相談
                             </a>
                         </div>
                     </div>
@@ -932,8 +877,8 @@
                 <!-- LINE誘導 -->
                 <div class="mt-10 text-center reveal">
                     <p class="text-gray-500 text-sm mb-4">他にご不明な点は、LINEでお気軽にご相談ください。</p>
-                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで質問する（無料）
+                    <a href="javascript:void(0)" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1" onclick="openQaBot();return false;">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> チャットで質問する（無料）
                     </a>
                 </div>
             </div>
@@ -971,9 +916,7 @@
                         <div class="mt-auto">
                             <div class="flex items-end gap-1 mb-5">
                                 <span class="text-gray-400 text-sm">1台</span>
-                                <span id="price-aircon-normal" class="text-3xl font-maru font-bold text-brand-primary ml-1">
-                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
-                                </span>
+                                <span id="price-aircon-normal" class="text-3xl font-maru font-bold text-brand-primary ml-1">9,000</span>
                                 <span class="text-gray-500 text-sm mb-1">円</span>
                             </div>
                             <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
@@ -998,9 +941,7 @@
                         <div class="mt-auto">
                             <div class="flex items-end gap-1 mb-5">
                                 <span class="text-gray-400 text-sm">1台</span>
-                                <span id="price-aircon-clean" class="text-3xl font-maru font-bold text-brand-primary ml-1">
-                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
-                                </span>
+                                <span id="price-aircon-clean" class="text-3xl font-maru font-bold text-brand-primary ml-1">15,000</span>
                                 <span class="text-gray-500 text-sm mb-1">円</span>
                             </div>
                             <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
@@ -1058,9 +999,7 @@
                         <div class="mt-auto">
                             <div class="flex items-end gap-1 mb-5">
                                 <span class="text-gray-400 text-sm">1台</span>
-                                <span id="price-washing" class="text-3xl font-maru font-bold text-brand-primary ml-1">
-                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
-                                </span>
+                                <span id="price-washing" class="text-3xl font-maru font-bold text-brand-primary ml-1">15,000</span>
                                 <span class="text-gray-500 text-sm mb-1">円</span>
                             </div>
                             <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
@@ -1085,9 +1024,7 @@
                         <div class="mt-auto">
                             <div class="flex items-end gap-1 mb-5">
                                 <span class="text-gray-400 text-sm">1台</span>
-                                <span id="price-rangehood" class="text-3xl font-maru font-bold text-brand-primary ml-1">
-                                    <span class="inline-block w-20 h-8 bg-brand-light rounded animate-pulse"></span>
-                                </span>
+                                <span id="price-rangehood" class="text-3xl font-maru font-bold text-brand-primary ml-1">15,000</span>
                                 <span class="text-gray-500 text-sm mb-1">円</span>
                             </div>
                             <ul class="text-xs text-gray-500 space-y-1.5 mb-6">
@@ -1140,13 +1077,13 @@
                             <span>Laxuz 全メニュー・料金表</span>
                         </div>
                         <div class="w-full h-[500px] lg:h-[600px] bg-white relative">
-                            <iframe src="https://x.gd/3yfCu" class="absolute inset-0 w-full h-full border-none z-10 bg-transparent" title="Laxuz 料金・メニュー詳細" loading="lazy"></iframe>
+                            <iframe src="https://x.gd/8Aqvl" class="absolute inset-0 w-full h-full border-none z-10 bg-transparent" title="Laxuz 料金・メニュー詳細" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-10 text-center reveal delay-200">
-                    <a href="https://x.gd/3yfCu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-brand-primary hover:bg-brand-light px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 w-full sm:w-auto">
+                    <a href="https://x.gd/8Aqvl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-brand-primary hover:bg-brand-light px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 w-full sm:w-auto">
                         <i data-lucide="external-link" class="w-5 h-5"></i> 別ウィンドウで詳しく見る
                     </a>
                 </div>
@@ -1155,10 +1092,10 @@
     </div>
 
     <!-- Floating LINE Button (スマホで小さめに) -->
-    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group" style="display:none">
         <i data-lucide="message-circle" class="w-7 h-7 md:w-10 md:h-10"></i>
         <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            LINEで相談
+            簡単予約・お見積り
         </span>
     </a>
 
@@ -1197,8 +1134,8 @@
                         <li><button onclick="window.scrollToSection('menu')" class="hover:text-white transition">料金・メニュー</button></li>
                         <li><a href="column.html" class="hover:text-white transition">お掃除コラム</a></li>
                     </ul>
-                    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full transition">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> LINEで無料相談
+                    <a href="javascript:void(0)" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white text-xs font-bold px-4 py-2.5 rounded-full transition" onclick="openQaBot();return false;">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> チャットで無料相談
                     </a>
                 </div>
             </div>
@@ -1220,94 +1157,27 @@
             if(menu && !menu.classList.contains('translate-x-full')) toggleMenu();
         }
         window.scrollToSection = scrollToSection;
-
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             if(menu) menu.classList.toggle('translate-x-full');
         }
         window.toggleMenu = toggleMenu;
 
-        // ── スプレッドシートから料金を動的取得 ──
-        // Googleスプレッドシート「ウェブに公開」のCSV形式URL
-        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZIUSA1wXtK30TkiLLcX_93kgbux6ikmXRNXqGrlRpbpDlp_GFK-96xvCQkeOeVBKY4Fv_aXo9YOYF/pub?output=csv';
-
-        function formatPrice(val) {
-            return Number(val).toLocaleString('ja-JP');
-        }
-
-        function setPrice(id, val) {
-            const el = document.getElementById(id);
-            if (el) el.textContent = formatPrice(val);
-        }
-
-        function setError(ids) {
-            ids.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.innerHTML = '<span class="text-sm text-gray-400">お問合せ</span>';
-            });
-        }
-
-        // CSVの1行をカラム配列に変換（引用符・カンマを正しく処理）
-        function parseCSVLine(line) {
-            const cols = [];
-            let cur = '';
-            let inQuote = false;
-            for (let i = 0; i < line.length; i++) {
-                const ch = line[i];
-                if (ch === '"') {
-                    inQuote = !inQuote;
-                } else if (ch === ',' && !inQuote) {
-                    cols.push(cur.trim());
-                    cur = '';
-                } else {
-                    cur += ch;
-                }
-            }
-            cols.push(cur.trim());
-            return cols;
-        }
-
-        async function fetchPrices() {
+        // 料金取得
+        (async () => {
             const ids = ['price-aircon-normal','price-aircon-clean','price-washing','price-rangehood'];
             try {
-                const res = await fetch(SHEET_URL);
-                if (!res.ok) throw new Error('fetch failed: ' + res.status);
-                const csv = await res.text();
-
-                // デバッグ用：最初の数行をコンソールに出力
-                const lines = csv.split('\n');
-                console.log('CSV取得成功。行数:', lines.length);
-                lines.slice(0, 5).forEach((l, i) => console.log(`行${i}:`, l));
-
-                const prices = {};
-                lines.forEach(line => {
-                    if (!line.trim()) return;
-                    const cols = parseCSVLine(line);
-                    // B列(index 1)=メニュー名, C列(index 2)=1台価格
-                    const name = (cols[1] || '').replace(/"/g, '').trim();
-                    const rawPrice = (cols[2] || '').replace(/"/g, '').replace(/,/g, '').trim();
-                    const price = parseFloat(rawPrice);
-                    if (name && !isNaN(price) && price > 0) {
-                        prices[name] = price;
-                    }
-                });
-
-                console.log('取得した価格データ:', prices);
-
-                if (prices['ノーマルエアコン'] != null)   setPrice('price-aircon-normal', prices['ノーマルエアコン']);
-                if (prices['お掃除機能エアコン'] != null) setPrice('price-aircon-clean',  prices['お掃除機能エアコン']);
-                if (prices['縦型洗濯機'] != null)         setPrice('price-washing',        prices['縦型洗濯機']);
-                if (prices['レンジフード'] != null)        setPrice('price-rangehood',      prices['レンジフード']);
-
+                const prices = await laxuzFetchPrices();
+                if (prices['ノーマルエアコン'])   laxuzSetPrice('price-aircon-normal', prices['ノーマルエアコン'].p1);
+                if (prices['お掃除機能エアコン']) laxuzSetPrice('price-aircon-clean',  prices['お掃除機能エアコン'].p1);
+                if (prices['縦型洗濯機'])         laxuzSetPrice('price-washing',        prices['縦型洗濯機'].p1);
+                if (prices['レンジフード'])        laxuzSetPrice('price-rangehood',      prices['レンジフード'].p1);
                 if (Object.keys(prices).length === 0) throw new Error('データが空です');
-
             } catch (e) {
-                setError(ids);
+                // 取得失敗時はHTMLのフォールバック値をそのまま表示
                 console.warn('料金の取得に失敗しました:', e);
             }
-        }
-
-        fetchPrices();
+        })();
 
         // ── お知らせ(News)をスプレッドシートから動的取得 ──
         // 同じスプレッドシートの「NEWS」シートをCSVで取得
@@ -1362,11 +1232,32 @@
             return div.innerHTML;
         }
 
-        function renderNewsCard(row) {
-            const text = (row[2] || '').trim();
-            const img1 = driveImageUrl((row[3] || '').trim());
-            const img2 = driveImageUrl((row[4] || '').trim());
-            const link = (row[5] || '').trim();
+        // ヘッダー行（列名）から列インデックスを特定する
+        // → スプレッドシートの列順が変わっても壊れないようにする
+        function buildNewsColumnMap(header) {
+            const norm = s => (s || '').replace(/\s/g, '').trim();
+            const find = (...names) => {
+                for (const n of names) {
+                    const i = header.findIndex(h => norm(h) === n);
+                    if (i !== -1) return i;
+                }
+                return -1;
+            };
+            return {
+                start: find('掲載開始'),
+                end:   find('掲載終了'),
+                text:  find('掲載文', '本文', 'お知らせ', '内容'),
+                img1:  find('画像1', '画像'),
+                img2:  find('画像2'),
+                link:  find('リンク', 'URL', 'link'),
+            };
+        }
+
+        function renderNewsCard(item) {
+            const text = (item.text || '').trim();
+            const img1 = driveImageUrl((item.img1 || '').trim());
+            const img2 = driveImageUrl((item.img2 || '').trim());
+            const link = (item.link || '').trim();
             const images = [img1, img2].filter(Boolean);
 
             // (b) 画像
@@ -1415,17 +1306,25 @@
                 const rows = parseCSVFull(csv);
                 if (rows.length < 2) throw new Error('データが空です');
 
+                // ヘッダー行から列の位置を判定（列順が変わっても対応）
+                const col = buildNewsColumnMap(rows[0]);
+                const get = (r, i) => (i >= 0 && i < r.length ? (r[i] || '') : '');
+
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
 
-                const activeNews = rows.slice(1).filter(r => {
-                    const start = parseSheetDate(r[0]);
-                    const end = parseSheetDate(r[1]);
-                    const text = (r[2] || '').trim();
-                    const img1 = (r[3] || '').trim();
-                    const img2 = (r[4] || '').trim();
+                const activeNews = rows.slice(1).map(r => ({
+                    start: get(r, col.start),
+                    end:   get(r, col.end),
+                    text:  get(r, col.text),
+                    img1:  get(r, col.img1),
+                    img2:  get(r, col.img2),
+                    link:  get(r, col.link),
+                })).filter(item => {
+                    const start = parseSheetDate(item.start);
+                    const end = parseSheetDate(item.end);
                     if (!start || !end) return false;
-                    if (!text && !img1 && !img2) return false;
+                    if (!item.text.trim() && !item.img1.trim() && !item.img2.trim()) return false;
                     return today >= start && today <= end;
                 });
 
@@ -1449,44 +1348,8 @@
 
         loadNews();
 
-        // ページトップボタン
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTop.classList.remove('opacity-0', 'pointer-events-none');
-                backToTop.classList.add('opacity-100');
-            } else {
-                backToTop.classList.add('opacity-0', 'pointer-events-none');
-                backToTop.classList.remove('opacity-100');
-            }
-        });
-
+        // ヒーローは即表示（共通UIに加えての固有処理）
         document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-
-            const revealEls = document.querySelectorAll('.reveal');
-
-            // IntersectionObserver非対応環境（古いiOS等）は全部即表示
-            if (!('IntersectionObserver' in window)) {
-                revealEls.forEach(el => el.classList.add('active'));
-                return;
-            }
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // 一度発火したら監視解除
-                    }
-                });
-            }, {
-                threshold: 0,           // iOSは0が最も確実
-                rootMargin: '0px 0px -60px 0px' // 画面下端より60px手前で発火
-            });
-
-            revealEls.forEach(el => observer.observe(el));
-
-            // ヒーローセクションは即時表示
             setTimeout(() => {
                 document.querySelectorAll('section:first-of-type .reveal').forEach(el => el.classList.add('active'));
             }, 50);

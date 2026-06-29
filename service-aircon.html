@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Laxuz v1.2 ｜ 最終更新 2026/06/29 14:06 -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -13,36 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="common.js?v=20260629"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { primary: '#0F766E', light: '#CCFBF1', accent: '#F59E0B', bg: '#FFFAED', line: '#06C755', lineHover: '#05B34C' }
-                    },
-                    fontFamily: {
-                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
-                        maru: ['"Zen Maru Gothic"', 'sans-serif'],
-                        mincho: ['"Shippori Mincho"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); will-change: opacity,transform; -webkit-backface-visibility:hidden; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
-        .soft-shadow { box-shadow: 0 8px 32px -8px rgba(15,118,110,0.10); }
-        .step-line::before { content:''; position:absolute; left:22px; top:48px; bottom:-16px; width:2px; background:#CCFBF1; }
-        .float-line-btn { bottom:1.25rem; right:1.25rem; }
-        @media(min-width:768px){ .float-line-btn { bottom:2.5rem; right:2.5rem; } }
-    </style>
+    <link rel="stylesheet" href="common.css?v=20260629">
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white">
 
@@ -61,8 +35,8 @@
                 <a href="index.html#area" class="text-gray-500 hover:text-brand-primary font-medium transition">エリア</a>
                 <a href="index.html#booking" class="text-gray-500 hover:text-brand-primary font-medium transition">料金</a>
                 <a href="index.html#faq" class="text-gray-500 hover:text-brand-primary font-medium transition">FAQ</a>
-                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i> LINE予約
+                <a href="javascript:void(0)" class="bg-brand-line hover:bg-brand-lineHover text-white px-5 py-2.5 rounded-full font-bold shadow-md transition flex items-center gap-2" onclick="openQaBot();return false;">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> チャット予約
                 </a>
             </nav>
             <button onclick="document.getElementById('sv-mobile-menu').classList.toggle('translate-x-full')" class="md:hidden text-gray-600 bg-brand-light p-2 rounded-full">
@@ -75,7 +49,7 @@
             <a href="index.html#reviews" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="star" class="w-5 h-5 text-brand-primary"></i>実績・口コミ</a>
             <a href="index.html#area" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>訪問エリア</a>
             <a href="index.html#booking" class="text-xl font-maru font-bold text-gray-800 border-b border-brand-light pb-4 flex items-center gap-3"><i data-lucide="clipboard-list" class="w-5 h-5 text-brand-primary"></i>料金・メニュー</a>
-            <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4"><i data-lucide="message-circle" class="w-6 h-6"></i> LINEで簡単予約</a>
+            <a href="javascript:void(0)" class="bg-brand-line text-center text-white text-lg py-4 rounded-2xl font-bold shadow-md w-full flex justify-center items-center gap-2 mt-4" onclick="openQaBot();return false;"><i data-lucide="message-circle" class="w-6 h-6"></i> チャットで簡単予約</a>
         </div>
     </header>
 
@@ -208,10 +182,10 @@
                                 <p class="text-gray-500 text-xs mb-3">壁掛け・標準タイプ</p>
                                 <div class="flex items-end gap-1 mb-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-normal" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-normal" class="text-2xl font-maru font-bold text-brand-primary ml-1">9,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
-                                <p id="sv-price-normal-multi" class="text-xs text-gray-400"></p>
+                                <p id="sv-price-normal-multi" class="text-xs text-gray-400">2台: 17,500円　3台: 26,000円</p>
                             </div>
                         </div>
 
@@ -226,10 +200,10 @@
                                 <p class="text-gray-500 text-xs mb-3">自動洗浄機能付き</p>
                                 <div class="flex items-end gap-1 mb-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-clean" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-clean" class="text-2xl font-maru font-bold text-brand-primary ml-1">15,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
-                                <p id="sv-price-clean-multi" class="text-xs text-gray-400"></p>
+                                <p id="sv-price-clean-multi" class="text-xs text-gray-400">2台: 29,500円　3台: 44,000円</p>
                             </div>
                         </div>
 
@@ -244,10 +218,10 @@
                                 <div class="text-right flex-shrink-0 ml-4">
                                     <div class="flex items-end gap-1 justify-end mb-1">
                                         <span class="text-gray-400 text-xs">1台</span>
-                                        <span id="sv-price-high" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                        <span id="sv-price-high" class="text-2xl font-maru font-bold text-brand-primary ml-1">20,000</span>
                                         <span class="text-gray-500 text-xs mb-0.5">円</span>
                                     </div>
-                                    <p id="sv-price-high-multi" class="text-xs text-gray-400"></p>
+                                    <p id="sv-price-high-multi" class="text-xs text-gray-400">2台: 39,000円　3台: 59,000円</p>
                                 </div>
                             </div>
 
@@ -272,7 +246,7 @@
                                 <p class="text-gray-600 text-xs leading-relaxed mb-3">室外機のフィン（放熱板）にほこりや汚れが詰まると、熱交換の効率が落ちて冷暖房の効きが悪くなり、電気代が上がる原因になります。また、内部にカビや異物が入り込むとモーターの寿命を縮めることも。定期的な洗浄で効率を維持し、故障リスクを下げましょう。</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-shitsugaiki" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-shitsugaiki" class="text-2xl font-maru font-bold text-brand-primary ml-1">4,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -289,7 +263,7 @@
                                 <p class="text-gray-600 text-xs leading-relaxed mb-3">エアコン内部は湿気がこもりやすく、クリーニング直後でもカビが再発しやすい環境です。防カビコーティングを施すことで、カビの再付着を抑制し、清潔な状態をより長く保てます。小さなお子様やアレルギーをお持ちの方のいるご家庭に特におすすめです。</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-bokabi" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-bokabi" class="text-2xl font-maru font-bold text-brand-primary ml-1">2,500</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -306,7 +280,7 @@
                                 <p class="text-gray-600 text-xs leading-relaxed mb-3">ドレンホースはエアコンの結露水を外へ排出する排水管です。汚れやカビ、虫の侵入などで詰まると、室内への水漏れの原因になります。また詰まりが悪化すると本体の電気系統に影響し、故障につながることも。定期的な洗浄で水漏れトラブルを未然に防ぎましょう。</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-doren" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-doren" class="text-2xl font-maru font-bold text-brand-primary ml-1">2,500</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -328,7 +302,7 @@
                                 <p class="text-gray-500 text-xs mb-3">室外機＋防カビ＋ドレンホース</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-500 text-xs">追加</span>
-                                    <span id="sv-price-aset" class="text-2xl font-maru font-bold text-amber-600 ml-1"><span class="inline-block w-16 h-7 bg-amber-100 rounded animate-pulse"></span></span>
+                                    <span id="sv-price-aset" class="text-2xl font-maru font-bold text-amber-600 ml-1">8,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -345,7 +319,7 @@
                                 <p class="text-gray-500 text-xs mb-3">室外機＋ドレンホース</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-500 text-xs">追加</span>
-                                    <span id="sv-price-bset" class="text-2xl font-maru font-bold text-amber-600 ml-1"><span class="inline-block w-16 h-7 bg-amber-100 rounded animate-pulse"></span></span>
+                                    <span id="sv-price-bset" class="text-2xl font-maru font-bold text-amber-600 ml-1">4,500</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -367,7 +341,7 @@
                                 <p class="text-gray-600 text-xs leading-relaxed mb-3">天井カセット型業務用エアコンを完全分解して洗浄します。シロッコファン・アルミフィン（熱交換器）・外装パネル・フィルターを取り外し、高圧洗浄と専用洗剤で内部に蓄積したカビ・ほこり・油汚れを根こそぎ除去。業務用は家庭用より大型で汚れが溜まりやすく、放置すると冷暖房効率の低下や異臭の原因になります。</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-tenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-tenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1">23,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -384,7 +358,7 @@
                                 <p class="text-gray-600 text-xs leading-relaxed mb-3">外装パネルとフィルターを中心とした簡易クリーニングです。分解洗浄ほど大がかりではなく、定期的なメンテナンスとして取り入れやすいプランです。フィルターの目詰まりを解消することで風量・換気効率を回復し、電気代の節約にもつながります。</p>
                                 <div class="flex items-end gap-1">
                                     <span class="text-gray-400 text-xs">1台</span>
-                                    <span id="sv-price-kantenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1"><span class="inline-block w-16 h-7 bg-brand-light rounded animate-pulse"></span></span>
+                                    <span id="sv-price-kantenkase" class="text-2xl font-maru font-bold text-brand-primary ml-1">8,000</span>
                                     <span class="text-gray-500 text-xs mb-0.5">円</span>
                                 </div>
                             </div>
@@ -518,8 +492,8 @@
             <div class="max-w-2xl mx-auto px-4 text-center relative z-10 reveal">
                 <h2 class="font-mincho text-2xl lg:text-3xl font-bold text-white mb-4">エアコンのニオイや汚れが気になったら</h2>
                 <p class="text-teal-100 text-sm mb-8 leading-relaxed">まずはLINEでお気軽にご相談ください。<br>写真を送っていただければ、より正確なお見積りが可能です。</p>
-                <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-10 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i> LINEで無料相談する
+                <a href="javascript:void(0)" class="inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white px-10 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1" onclick="openQaBot();return false;">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> チャットで無料相談する
                 </a>
             </div>
         </section>
@@ -529,7 +503,7 @@
         <i data-lucide="chevron-up" class="w-5 h-5"></i>
     </button>
 
-    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group">
+    <a href="https://lin.ee/7hoUCFz" target="_blank" rel="noopener noreferrer" class="float-line-btn fixed z-[100] bg-brand-line hover:bg-brand-lineHover text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center transform transition-transform duration-300 hover:scale-110 group" style="display:none">
         <i data-lucide="message-circle" class="w-7 h-7 md:w-9 md:h-9"></i>
         <span class="absolute right-full mr-4 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-2xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">無料相談・ご予約</span>
     </a>
@@ -551,8 +525,10 @@
     </footer>
 
     <script>
-        // 高性能エアコン機種一覧をスプレッドシートから取得
+        // ----- 高性能エアコン機種一覧（メーカータブ）-----
         const MAKER_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQT5QxwptTy73a34UtLRlXGbUJ3BQ4Ero1caVWmpfMgJJN3b8tnGNxKEgrJa8AmP4piQoMlzlv98Yr/pub?gid=1082341795&single=true&output=csv';
+        const MAKER_TAB_ON  = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-brand-primary text-white border-brand-primary';
+        const MAKER_TAB_OFF = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary';
 
         async function fetchMakerList() {
             try {
@@ -560,53 +536,36 @@
                 if (!res.ok) throw new Error('fetch failed');
                 const csv = await res.text();
                 const lines = csv.split('\n').filter(l => l.trim());
-
-                // 1行目はヘッダー（メーカー,シリーズ名,該当機種・型番）なのでスキップ
                 const makers = [];
                 lines.slice(1).forEach(line => {
-                    const cols = parseCSVLine(line);
+                    const cols = laxuzParseCSVLine(line);
                     const maker = (cols[0] || '').replace(/"/g, '').trim();
                     const series = (cols[1] || '').replace(/"/g, '').trim();
                     const models = (cols[2] || '').replace(/"/g, '').trim();
                     if (maker) makers.push({ maker, series, models });
                 });
-
                 if (makers.length === 0) throw new Error('no data');
-
-                // タブ生成
                 const tabsEl = document.getElementById('maker-tabs');
                 const contentEl = document.getElementById('maker-content');
                 tabsEl.innerHTML = '';
-
                 makers.forEach((item, idx) => {
                     const btn = document.createElement('button');
                     btn.textContent = item.maker;
-                    btn.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 ' +
-                        (idx === 0
-                            ? 'bg-brand-primary text-white border-brand-primary'
-                            : 'bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary');
+                    btn.className = idx === 0 ? MAKER_TAB_ON : MAKER_TAB_OFF;
                     btn.addEventListener('click', () => {
-                        // アクティブタブ切り替え
-                        tabsEl.querySelectorAll('button').forEach(b => {
-                            b.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary';
-                        });
-                        btn.className = 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all duration-200 bg-brand-primary text-white border-brand-primary';
-                        // コンテンツ更新
+                        tabsEl.querySelectorAll('button').forEach(b => b.className = MAKER_TAB_OFF);
+                        btn.className = MAKER_TAB_ON;
                         showMakerContent(item, contentEl);
                     });
                     tabsEl.appendChild(btn);
                 });
-
-                // 最初のタブを表示
                 showMakerContent(makers[0], contentEl);
-
             } catch (e) {
                 const tabsEl = document.getElementById('maker-tabs');
                 if (tabsEl) tabsEl.innerHTML = '<p class="text-xs text-gray-400">機種情報の取得に失敗しました。LINEでお問い合わせください。</p>';
                 console.warn('機種一覧取得失敗:', e);
             }
         }
-
         function showMakerContent(item, el) {
             el.innerHTML = `
                 <div class="flex flex-col sm:flex-row gap-3">
@@ -617,91 +576,27 @@
                     <div class="flex-1">
                         <p class="text-sm text-gray-700 leading-relaxed">${item.models || '詳細はお問い合わせください'}</p>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
-
         fetchMakerList();
 
-        // スプレッドシートから料金取得
-        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZIUSA1wXtK30TkiLLcX_93kgbux6ikmXRNXqGrlRpbpDlp_GFK-96xvCQkeOeVBKY4Fv_aXo9YOYF/pub?output=csv';
-
-        function fmt(v) { return Number(v).toLocaleString('ja-JP'); }
-        function setP(id, val) { const el = document.getElementById(id); if(el) el.textContent = fmt(val); }
-
-        function parseCSVLine(line) {
-            const cols = []; let cur = ''; let inQ = false;
-            for(let i=0;i<line.length;i++){
-                const ch=line[i];
-                if(ch==='"'){inQ=!inQ;}
-                else if(ch===','&&!inQ){cols.push(cur.trim());cur='';}
-                else{cur+=ch;}
-            }
-            cols.push(cur.trim()); return cols;
-        }
-
-        async function fetchPrices() {
+        // ----- 料金取得 -----
+        (async () => {
             try {
-                const res = await fetch(SHEET_URL);
-                if(!res.ok) throw new Error('fetch failed');
-                const csv = await res.text();
-                const prices = {};
-                csv.split('\n').forEach(line => {
-                    if(!line.trim()) return;
-                    const cols = parseCSVLine(line);
-                    const name = (cols[1]||'').replace(/"/g,'').trim();
-                    const p1 = parseFloat((cols[2]||'').replace(/[^0-9.]/g,''));
-                    const p2 = parseFloat((cols[3]||'').replace(/[^0-9.]/g,''));
-                    const p3 = parseFloat((cols[4]||'').replace(/[^0-9.]/g,''));
-                    if(name && !isNaN(p1) && p1>0) prices[name] = {p1, p2, p3};
-                });
-
-                if(prices['ノーマルエアコン']) {
-                    const d = prices['ノーマルエアコン'];
-                    setP('sv-price-normal', d.p1);
-                    const el = document.getElementById('sv-price-normal-multi');
-                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
-                }
-                if(prices['お掃除機能エアコン']) {
-                    const d = prices['お掃除機能エアコン'];
-                    setP('sv-price-clean', d.p1);
-                    const el = document.getElementById('sv-price-clean-multi');
-                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
-                }
-                if(prices['高性能エアコン']) {
-                    const d = prices['高性能エアコン'];
-                    setP('sv-price-high', d.p1);
-                    const el = document.getElementById('sv-price-high-multi');
-                    if(el) el.textContent = [d.p2?`2台: ${fmt(d.p2)}円`:'', d.p3?`3台: ${fmt(d.p3)}円`:''].filter(Boolean).join('　');
-                }
-                if(prices['Aセット'])    setP('sv-price-aset', prices['Aセット'].p1);
-                if(prices['Bセット'])    setP('sv-price-bset', prices['Bセット'].p1);
-                if(prices['室外機'])     setP('sv-price-shitsugaiki', prices['室外機'].p1);
-                if(prices['防カビ'])     setP('sv-price-bokabi', prices['防カビ'].p1);
-                if(prices['ドレンホース']) setP('sv-price-doren', prices['ドレンホース'].p1);
-                if(prices['業務用天カセ']) setP('sv-price-tenkase', prices['業務用天カセ'].p1);
-                if(prices['簡易業務用天カセ']) setP('sv-price-kantenkase', prices['簡易業務用天カセ'].p1);
-
-            } catch(e) {
-                console.warn('料金取得失敗:', e);
-            }
-        }
-        fetchPrices();
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            const backToTop = document.getElementById('back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) { backToTop.classList.remove('opacity-0','pointer-events-none'); backToTop.classList.add('opacity-100'); }
-                else { backToTop.classList.add('opacity-0','pointer-events-none'); backToTop.classList.remove('opacity-100'); }
-            });
-            const els = document.querySelectorAll('.reveal');
-            if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('active')); return; }
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
-            }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-            els.forEach(el => obs.observe(el));
-        });
+                const prices = await laxuzFetchPrices();
+                const multi = (d) => [d.p2?`2台: ${laxuzFmt(d.p2)}円`:'', d.p3?`3台: ${laxuzFmt(d.p3)}円`:''].filter(Boolean).join('\u3000');
+                if (prices['ノーマルエアコン']) { laxuzSetPrice('sv-price-normal', prices['ノーマルエアコン'].p1); const el=document.getElementById('sv-price-normal-multi'); if(el) el.textContent=multi(prices['ノーマルエアコン']); }
+                if (prices['お掃除機能エアコン']) { laxuzSetPrice('sv-price-clean', prices['お掃除機能エアコン'].p1); const el=document.getElementById('sv-price-clean-multi'); if(el) el.textContent=multi(prices['お掃除機能エアコン']); }
+                if (prices['高性能エアコン']) { laxuzSetPrice('sv-price-high', prices['高性能エアコン'].p1); const el=document.getElementById('sv-price-high-multi'); if(el) el.textContent=multi(prices['高性能エアコン']); }
+                if (prices['Aセット'])    laxuzSetPrice('sv-price-aset', prices['Aセット'].p1);
+                if (prices['Bセット'])    laxuzSetPrice('sv-price-bset', prices['Bセット'].p1);
+                if (prices['室外機'])     laxuzSetPrice('sv-price-shitsugaiki', prices['室外機'].p1);
+                if (prices['防カビ'])     laxuzSetPrice('sv-price-bokabi', prices['防カビ'].p1);
+                if (prices['ドレンホース']) laxuzSetPrice('sv-price-doren', prices['ドレンホース'].p1);
+                if (prices['業務用天カセ']) laxuzSetPrice('sv-price-tenkase', prices['業務用天カセ'].p1);
+                if (prices['簡易業務用天カセ']) laxuzSetPrice('sv-price-kantenkase', prices['簡易業務用天カセ'].p1);
+            } catch(e) { console.warn('料金取得失敗:', e); }
+        })();
     </script>
 </body>
 </html>

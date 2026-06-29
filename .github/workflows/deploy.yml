@@ -27,3 +27,7 @@ jobs:
             **/files.zip
             **/files/**
             **/img/calendar/config.php
+            **/node_modules/**
+            **/netimg/**
+            **/*.gs
+            チャットボット導入手順.md
