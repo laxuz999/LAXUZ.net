@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Laxuz v1.7 ｜ 最終更新 2026/06/30 15:28 -->
+<!-- Laxuz v1.8 ｜ 最終更新 2026/06/30 15:42 -->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -992,55 +992,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 対応エリア判定ツール -->
-                        <div class="mt-5 bg-white border-2 border-brand-light rounded-[1.5rem] p-6 soft-shadow">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-brand-primary flex-shrink-0">
-                                    <i data-lucide="search" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-brand-primary tracking-widest">AREA CHECK</p>
-                                    <h3 class="font-maru font-bold text-gray-800 text-lg">対応エリアを調べる</h3>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-500 mb-3">お住まいの市区町村を入力すると、出張費を確認できます。</p>
-                            <div class="flex gap-2">
-                                <input id="lx-area-input" list="lx-area-list" type="text" placeholder="例：吹田市 / 東淀川区" autocomplete="off"
-                                    class="flex-1 border-2 border-gray-200 focus:border-brand-primary rounded-full px-4 py-2.5 text-sm outline-none transition"
-                                    onkeydown="if(event.key==='Enter'){event.preventDefault();laxuzCheckArea();}">
-                                <button type="button" onclick="laxuzCheckArea()"
-                                    class="bg-brand-primary hover:bg-teal-700 text-white font-bold px-6 py-2.5 rounded-full text-sm transition flex-shrink-0">判定</button>
-                            </div>
-                            <datalist id="lx-area-list"></datalist>
-                            <div id="lx-area-result" class="mt-3"></div>
-                        </div>
-                        <script>
-                        (function(){
-                          const FREE=["東淀川区","淀川区","西淀川区","北区","都島区","旭区","鶴見区","福島区","此花区","中央区","西区","東成区","城東区","生野区","東住吉区","平野区","住吉区","住之江区","守口市","門真市","寝屋川市","枚方市","交野市","四條畷市","大東市","東大阪市","八尾市","柏原市","摂津市","吹田市","豊中市","池田市","箕面市","茨木市","高槻市","島本町"];
-                          const PAID=["能勢町","豊能町","川西市","宝塚市","伊丹市","尼崎市","生駒市","平群町","堺市","羽曳野市","富田林市","太子町","河南町","明石市"];
-                          const norm=s=>(s||"").replace(/\s/g,"").replace(/^大阪府/,"").replace(/^大阪市/,"");
-                          const dl=document.getElementById("lx-area-list");
-                          if(dl){[...FREE,...PAID].forEach(n=>{const o=document.createElement("option");o.value=n;dl.appendChild(o);});}
-                          const chat='<a href="javascript:void(0)" onclick="openQaBot();return false;" class="mt-3 inline-flex items-center gap-2 bg-brand-line hover:bg-brand-lineHover text-white font-bold px-5 py-2.5 rounded-full text-sm transition"><i data-lucide="message-circle" class="w-4 h-4"></i>チャットで無料相談</a>';
-                          const hit=(arr,v)=>arr.some(n=>{const m=norm(n);return m===v||(v.length>=2&&(m.indexOf(v)===0||v.indexOf(m)===0));});
-                          window.laxuzCheckArea=function(){
-                            const inp=document.getElementById("lx-area-input"),box=document.getElementById("lx-area-result");
-                            if(!inp||!box)return;
-                            const v=norm(inp.value);
-                            if(!v){box.innerHTML='<p class="text-sm text-gray-400">市区町村を入力してください。</p>';return;}
-                            let html;
-                            if(hit(FREE,v)){
-                              html='<div class="bg-yellow-50 border border-yellow-300 rounded-xl p-4"><p class="font-bold text-yellow-800 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i>出張費 無料エリアです！</p><p class="text-sm text-yellow-800 mt-1">追加の出張費なしでお伺いできます。</p>'+chat+'</div>';
-                            }else if(hit(PAID,v)){
-                              html='<div class="bg-sky-50 border border-sky-300 rounded-xl p-4"><p class="font-bold text-sky-800 flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>対応エリアです（別途 出張費あり）</p><p class="text-sm text-sky-800 mt-1">出張費の金額はチャットでお気軽にご確認ください。</p>'+chat+'</div>';
-                            }else{
-                              html='<div class="bg-gray-50 border border-gray-200 rounded-xl p-4"><p class="font-bold text-gray-700 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5"></i>記載エリア外です</p><p class="text-sm text-gray-600 mt-1">エリア外でもお伺いできる場合があります。まずはお気軽にご相談ください。</p>'+chat+'</div>';
-                            }
-                            box.innerHTML=html;
-                            if(typeof lucide!=="undefined")lucide.createIcons();
-                          };
-                        })();
-                        </script>
                     </div>
 
                     <!-- Area details -->
