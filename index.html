@@ -978,11 +978,15 @@
 
                     <!-- Map image -->
                     <div class="w-full lg:w-1/2 reveal">
-                        <div class="relative rounded-[2rem] overflow-hidden soft-shadow border-4 border-white">
+                        <div id="area-img-trigger" class="relative rounded-[2rem] overflow-hidden soft-shadow border-4 border-white cursor-zoom-in group focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/50" role="button" tabindex="0" aria-label="エリアマップを拡大表示">
                             <picture>
                                 <source srcset="/img/area_osaka.webp" type="image/webp">
-                                <img src="/img/area_osaka.png" alt="Laxuz 訪問エリアマップ（大阪の対応エリア）" class="w-full h-auto object-cover" loading="lazy">
+                                <img src="/img/area_osaka.png" alt="Laxuz 訪問エリアマップ（大阪の対応エリア）" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                             </picture>
+                            <!-- 拡大ヒント -->
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center shadow-md text-brand-primary pointer-events-none">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </div>
                             <!-- 凡例オーバーレイ -->
                             <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-md flex flex-col gap-2 text-xs font-bold">
                                 <div class="flex items-center gap-2">
@@ -1745,5 +1749,24 @@
             }, 50);
         });
     </script>
+
+    <!-- エリアマップ 拡大表示モーダル -->
+    <div id="area-img-modal" class="hidden fixed inset-0 z-[2000] items-center justify-center bg-black/80" role="dialog" aria-modal="true" aria-label="エリアマップ拡大表示">
+        <button id="area-img-close" type="button" aria-label="閉じる" class="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-lg z-10">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="hidden md:block absolute top-4 left-1/2 -translate-x-1/2 text-white/80 text-xs md:text-sm bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full pointer-events-none">ホイールで拡大縮小・ドラッグで移動</div>
+        <div id="area-img-stage" class="w-full h-full flex items-center justify-center overflow-hidden">
+            <picture>
+                <source srcset="/img/area_osaka.webp" type="image/webp">
+                <img id="area-img-modal-img" src="/img/area_osaka.png" alt="Laxuz 訪問エリアマップ（大阪の対応エリア）拡大表示" draggable="false">
+            </picture>
+        </div>
+        <div class="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+            <button id="area-img-zoom-out" type="button" aria-label="縮小" class="w-11 h-11 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-lg"><i data-lucide="minus" class="w-5 h-5"></i></button>
+            <button id="area-img-reset" type="button" aria-label="表示をリセット" class="w-11 h-11 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-lg"><i data-lucide="maximize" class="w-5 h-5"></i></button>
+            <button id="area-img-zoom-in" type="button" aria-label="拡大" class="w-11 h-11 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-lg"><i data-lucide="plus" class="w-5 h-5"></i></button>
+        </div>
+    </div>
 </body>
 </html>
